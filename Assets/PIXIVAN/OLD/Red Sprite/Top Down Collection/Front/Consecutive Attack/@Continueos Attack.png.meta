@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 3c327e1d95319427ba4f8f157b0ef2d5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '@Continueos Attack_0'
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 42.75
+        height: 45
+      alignment: 9
+      pivot: {x: 0.34145212, y: 0.73668945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e1cfa5e2e6443438387a17809d398b
+      internalID: 305088582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_1'
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 25
+        height: 45
+      alignment: 9
+      pivot: {x: 0.44415635, y: 0.7044137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86333186f71cd4532a3237d7c237ffd5
+      internalID: 927571321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_2'
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 38
+        height: 45
+      alignment: 9
+      pivot: {x: 0.47452003, y: 0.6506206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a52296afb30476397e858cf1ad8037
+      internalID: 1392745510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_3'
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 30
+        height: 45
+      alignment: 9
+      pivot: {x: 0.3085973, y: 0.6721378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090eae920d0f0435c875054a6105df23
+      internalID: 1895647370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_4'
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 35
+        height: 45
+      alignment: 9
+      pivot: {x: 0.40992808, y: 0.6613792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f022374106bde4519815b7edc4d77752
+      internalID: 2125392186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_5'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 33
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4559881, y: 0.6613792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6556ed0f5b454484b81fdbd628b1aca3
+      internalID: -892344554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_6'
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 29
+        height: 45
+      alignment: 9
+      pivot: {x: 0.42584756, y: 0.6506206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328b49015baea46cbac32a8fbc209ca9
+      internalID: -1292163802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_7'
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 27
+        height: 45
+      alignment: 9
+      pivot: {x: 0.46413845, y: 0.6721378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c914c4b7d44a49b19f76dd4869ec28c
+      internalID: -1803262416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_8'
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 29
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5000011, y: 0.6613792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97bbc2672075441098a1de53c38f417
+      internalID: 1450523280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_9'
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 0
+        width: 36
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4437057, y: 0.639862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8101f0d6f1f494dc6b116d11e69b1dc2
+      internalID: 226806151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_10'
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 0
+        width: 29
+        height: 45
+      alignment: 9
+      pivot: {x: 0.38741073, y: 0.639862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d40e6d371034c12ae00db7e81b34f3
+      internalID: -2031967116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_11'
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 31
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acabb7d65cae478fa74c6d336e5a537
+      internalID: 2105917389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_12'
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 35
+        height: 45
+      alignment: 9
+      pivot: {x: 0.45496565, y: 0.54303455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf743688967b4ebc90ec9d136f6cf83
+      internalID: 1226293361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_13'
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 30
+        height: 45
+      alignment: 9
+      pivot: {x: 0.44408163, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdb9db501dac4ab38274a6ddf4f4adf
+      internalID: 22385211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_14'
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ebae3834f2c4b6baab632cb0053230
+      internalID: 647884621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_15'
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 0
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2987038f086b246a2ac00cc204c6bc6b
+      internalID: 1303202048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_16'
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 30
+        height: 45
+      alignment: 9
+      pivot: {x: 0.500002, y: 0.532276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4647a705b821a419ab13daa876706423
+      internalID: -501107982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_17'
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016b976a14d504a1eabe83a28d740caa
+      internalID: -363683441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_18'
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 42.75
+        height: 45
+      alignment: 9
+      pivot: {x: 0.51132613, y: 0.40317276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c52fb71f4bb04c08aba0e027de320a3
+      internalID: -182880879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_19'
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 0
+        width: 42.75
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4773506, y: 0.39241418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cd973212d3d43c08231445320d9f2d
+      internalID: 1064088808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_20'
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 42.75
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4207271, y: 0.41393137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d760f366c48fc4910a5606cbf0cb94b2
+      internalID: -1881243278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_21'
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 0
+        width: 32
+        height: 45
+      alignment: 9
+      pivot: {x: 0.2848293, y: 0.37089697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52663827f4b84e60b37529491600d8b
+      internalID: -1925454591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_22'
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 0
+        width: 35
+        height: 45
+      alignment: 9
+      pivot: {x: 0.2828426, y: 0.34710178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f9014e1c9534cb9adf809307f7f860
+      internalID: 70449954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_23'
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 0
+        width: 29
+        height: 45
+      alignment: 9
+      pivot: {x: 0.43221098, y: 0.34710178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a669faf9e0fe44cfa99e8a7dbf8a6d6
+      internalID: 1266666883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_24'
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc837cbe81eb49a8ba6123336e32c43
+      internalID: 1802922118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_25'
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 0
+        width: 33
+        height: 44
+      alignment: 9
+      pivot: {x: 0.50000185, y: 0.5330094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c94531dd02a46a3b0485b43705544d
+      internalID: 1180597975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@Continueos Attack_26'
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1
+        width: 36
+        height: 42
+      alignment: 9
+      pivot: {x: 0.4999983, y: 0.40638873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b5cc8d1380f44519aa4a51e79ba0cf
+      internalID: 1035107552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      '@Continueos Attack_6': -1292163802
+      '@Continueos Attack_21': -1925454591
+      '@Continueos Attack_25': 1180597975
+      '@Continueos Attack_0': 305088582
+      '@Continueos Attack_17': -363683441
+      '@Continueos Attack_3': 1895647370
+      '@Continueos Attack_5': -892344554
+      '@Continueos Attack_11': 2105917389
+      '@Continueos Attack_18': -182880879
+      '@Continueos Attack_10': -2031967116
+      '@Continueos Attack_16': -501107982
+      '@Continueos Attack_12': 1226293361
+      '@Continueos Attack_26': 1035107552
+      '@Continueos Attack_13': 22385211
+      '@Continueos Attack_4': 2125392186
+      '@Continueos Attack_14': 647884621
+      '@Continueos Attack_8': 1450523280
+      '@Continueos Attack_22': 70449954
+      '@Continueos Attack_20': -1881243278
+      '@Continueos Attack_2': 1392745510
+      '@Continueos Attack_7': -1803262416
+      '@Continueos Attack_1': 927571321
+      '@Continueos Attack_15': 1303202048
+      '@Continueos Attack_24': 1802922118
+      '@Continueos Attack_23': 1266666883
+      '@Continueos Attack_9': 226806151
+      '@Continueos Attack_19': 1064088808
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

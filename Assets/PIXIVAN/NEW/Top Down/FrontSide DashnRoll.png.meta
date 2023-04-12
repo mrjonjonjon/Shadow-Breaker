@@ -1,0 +1,872 @@
+fileFormatVersion: 2
+guid: 8ab9b9fcf3c01433892181567c974b01
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 278
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ff77e71177d4a72aab472a30d477b2
+      internalID: -1923701405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 278
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93ee1d9d93eb41bf8a7a3defd09eb1c
+      internalID: 1262820419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 278
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb5524f7628042928e99012f57ba0b0
+      internalID: 993524960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 278
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347823247c4664e60b25e3e3a2e1ab27
+      internalID: -2138562566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 213
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00886987855e848b7986bb55e40bfc5f
+      internalID: -336377875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 213
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109d31ed7305749a09dfcd7ac2efc758
+      internalID: 1185610582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_6
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 212
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4153413a327144809bb36e9d04c7ef66
+      internalID: -256846694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_7
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 211
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc8b0c5fdd5742c7925336ca8898cf8
+      internalID: 720386787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 144
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fb84e47683a4767ba20b082b904962
+      internalID: 650538690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_9
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 144
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51e29c0667e948a8b53332fdda0184a
+      internalID: 825842021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_10
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 148
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0add11683dc242369178a0698faa5cc
+      internalID: 2103231773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_11
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 148
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ac5277c20fb448091b2dd8058ab46f
+      internalID: 1766928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_12
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 150
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1d45f91d3bf4ac5b34f3b9337a2416
+      internalID: 243069658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_13
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 150
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4119c91896a3e4b8ca32dfa089b137f3
+      internalID: -1608148871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 81
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d816e546517b407eb77b7c9adf90fc2
+      internalID: 325690747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_15
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 86
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051a3387c4b8445d8af1c9b6963f58fa
+      internalID: 1423475293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_16
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 85
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13b90f8539f6483192685286b71e100
+      internalID: -1483160782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_17
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 77
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143d0c613f38645aab6b219a2cedb518
+      internalID: -1846306514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_18
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 82
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0660a7ad2c5364f628fb5551802b9ca4
+      internalID: 2051097808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_19
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 82
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6993de573ed7d426da9b88842b57fc5e
+      internalID: -854659498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_20
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 85
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a4b880bc3434ca59fde970353d5f05
+      internalID: -266795884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 85
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71aa6d0d17284470a5d7025d6bcf54a
+      internalID: -1304130572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_22
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 85
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a9538a52748419ba49cc010c3c6f5a
+      internalID: -56633592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_23
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 86
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9893ed8c8d6a4d618263f2796a7cc28
+      internalID: 2021877465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_24
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 22
+        width: 11
+        height: 20
+      alignment: 9
+      pivot: {x: 0.49999914, y: 0.13165922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b757d84b6972d4440b71c68fd25b3bab
+      internalID: -749691828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 22
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5333334, y: 0.12283155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b178cd952f55f4d179a63b21b4d2633c
+      internalID: -2125212531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_26
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 21
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.49999872, y: 0.15693748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b002b6de0171a473b8eaa8cf85d4bcd4
+      internalID: -613738784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_27
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 20
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.48888808, y: 0.22073516}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890ea0b3540054455b2d9caed402243e
+      internalID: 759172785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 19
+        width: 13
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16862062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccbbcd6d4d814d7ebe9b99cb85b79d2
+      internalID: 853117080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_29
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 20
+        width: 13
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19304895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232aadeca6d704de8a174c005c62e433
+      internalID: 783131885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_30
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 19
+        width: 12
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5120366, y: 0.17711751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1444d1721b74848adc6527bc6785f7
+      internalID: 1508844436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_31
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 21
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5131309, y: 0.14919862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e944bbe44cd504891899a5e343c73330
+      internalID: 869187115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_32
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 22
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c083252706346109c83adfdcd8f8ac
+      internalID: 1114747581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrontSide DashnRoll_33
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 22
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393bca7f5a8f14bca802360d897d95db
+      internalID: -641037640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 671fccfaf3f13433b9cf48cc00907d4c, type: 3}
+      name: _Emission
+    nameFileIdTable:
+      FrontSide DashnRoll_3: -2138562566
+      FrontSide DashnRoll_22: -56633592
+      FrontSide DashnRoll_24: -749691828
+      FrontSide DashnRoll_10: 2103231773
+      FrontSide DashnRoll_11: 1766928
+      FrontSide DashnRoll_5: 1185610582
+      FrontSide DashnRoll_9: 825842021
+      FrontSide DashnRoll_26: -613738784
+      FrontSide DashnRoll_0: -1923701405
+      FrontSide DashnRoll_12: 243069658
+      FrontSide DashnRoll_14: 325690747
+      FrontSide DashnRoll_25: -2125212531
+      FrontSide DashnRoll_29: 783131885
+      FrontSide DashnRoll_6: -256846694
+      FrontSide DashnRoll_7: 720386787
+      FrontSide DashnRoll_2: 993524960
+      FrontSide DashnRoll_15: 1423475293
+      FrontSide DashnRoll_13: -1608148871
+      FrontSide DashnRoll_16: -1483160782
+      FrontSide DashnRoll_32: 1114747581
+      FrontSide DashnRoll_21: -1304130572
+      FrontSide DashnRoll_17: -1846306514
+      FrontSide DashnRoll_33: -641037640
+      FrontSide DashnRoll_31: 869187115
+      FrontSide DashnRoll_20: -266795884
+      FrontSide DashnRoll_27: 759172785
+      FrontSide DashnRoll_30: 1508844436
+      FrontSide DashnRoll_23: 2021877465
+      FrontSide DashnRoll_8: 650538690
+      FrontSide DashnRoll_1: 1262820419
+      FrontSide DashnRoll_19: -854659498
+      FrontSide DashnRoll_28: 853117080
+      FrontSide DashnRoll_4: -336377875
+      FrontSide DashnRoll_18: 2051097808
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

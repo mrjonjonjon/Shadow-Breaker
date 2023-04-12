@@ -1,0 +1,298 @@
+fileFormatVersion: 2
+guid: e06ac01f5f2a74d818178528ac7c9ba2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 401.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.7691919, y: 0.1986209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bf86f493f2b433eaf0ab3ec5e121f0
+      internalID: -1097918556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.616122, y: 0.21600807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0744ea775e034c9f9a7d6db431e2e7b
+      internalID: -474457564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.6477917, y: 0.1986209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75356280d2870484f9459dbbbccca561
+      internalID: -2039935978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.6496225, y: 0.25356317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d647eab38d2984b6fb8a481ce6cfc635
+      internalID: 1646498388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 173.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.6246854, y: 0.30832675}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a371745953e204f8ab628c4d0b88d06a
+      internalID: 269183901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.57481116, y: 0.43154567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2dd3e96fe744e068565ff8c141a7b1
+      internalID: -1286104890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 59.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.5498741, y: 0.45892745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71bb145a5f9e94fa7b680c4ecf20d639
+      internalID: -1470668863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Attack Side Sprite 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.625
+        width: 63
+        height: 57.375
+      alignment: 9
+      pivot: {x: 0.52493703, y: 0.4726187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6869c6fbd3a694d0a90429da0e333633
+      internalID: 642571657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sword Attack Side Sprite 1_1: -474457564
+      Sword Attack Side Sprite 1_0: -1097918556
+      Sword Attack Side Sprite 1_3: 1646498388
+      Sword Attack Side Sprite 1_7: 642571657
+      Sword Attack Side Sprite 1_4: 269183901
+      Sword Attack Side Sprite 1_6: -1470668863
+      Sword Attack Side Sprite 1_2: -2039935978
+      Sword Attack Side Sprite 1_5: -1286104890
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
