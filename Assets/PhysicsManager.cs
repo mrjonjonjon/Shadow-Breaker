@@ -36,7 +36,19 @@ public class PhysicsManager : MonoBehaviour
                 p.entityID=idCounter;
                 idCounter++;
         }
-      
+        int CompareByZPos(Physics a, Physics b) {
+            if (a.zpos < b.zpos) {
+                return -1;
+            } else if (a.zpos > b.zpos) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        // sort the list using the custom comparison function
+        allObjects.Sort(CompareByZPos);
+        
       
         // allObjects=;
     }
@@ -78,7 +90,7 @@ public class PhysicsManager : MonoBehaviour
          // MovementController.instance.handleJumping();
         
          
-        //update positions based on velocities
+        //add gravity and update positions based on velocities
         foreach(Physics p in allObjects){
                 if(p.entityType==Physics.EntityType.Prop){continue;}
                 p.PositionUpdate();
@@ -87,12 +99,7 @@ public class PhysicsManager : MonoBehaviour
                
         }  
 
-        //update above and below
-        foreach(Physics p in allObjects){
-                if(p.entityType==Physics.EntityType.Prop){continue;}
-                p.UpdateEntitiesAboveAndBelow();
-        }
-       
+      
            //resolve resulting collisions,setting resultand positions and velocities
            for(int i=0;i<PhysicsSettings.num_iterations;i++){
                 foreach(Physics p in allObjects){
@@ -104,6 +111,12 @@ public class PhysicsManager : MonoBehaviour
                 }
            }
 
+  //update above and below
+        foreach(Physics p in allObjects){
+                if(p.entityType==Physics.EntityType.Prop){continue;}
+                p.UpdateEntitiesAboveAndBelow();
+        }
+       
         foreach(Physics p in allObjects){
                     if(p.entityType==Physics.EntityType.Prop){continue;}
                     p.SetZFloor();       
@@ -117,6 +130,13 @@ public class PhysicsManager : MonoBehaviour
 
          foreach(Physics p in allObjects){
             p.UpdateDeltaPos();
+         }
+           foreach(Physics p in allObjects){
+            p.UpdateGrounded();
+         }
+
+         foreach(Physics p in allObjects){
+            p.SetParents();
          }
 
          OnFinishAllPhysicsUpdates.Invoke();

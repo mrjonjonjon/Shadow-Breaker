@@ -18,16 +18,18 @@ public class Physics : MonoBehaviour
         public ContactFilter2D _contactFilter;
         public bool lockGravityScale=false;
 
-         [HideInInspector]
+        [HideInInspector]
         public bool ignorePositionUpdate=false;
+
         [HideInInspector]
         public float originalGravityScale;
 
         //controls whether solidobject or trigger
         public bool isTrigger=false;
 
-       [HideInInspector]
+        [HideInInspector]
 	    public int entityID;
+
         [HideInInspector]
 	    public bool positionUpdated=false;
         [HideInInspector]
@@ -359,9 +361,14 @@ public bool IsGrounded(){
     }else {
         isGrounded=false;
     }
+    if(isGrounded){
+        zvel=0f;
+    }
 }
 
 public void PositionUpdate(){
+
+    //apply gravity
         lastPos =new Vector3(transform.position.x,transform.position.y,zpos);
         if(!fixZvel){
             zvel += PhysicsSettings.gravity*gravityScale;
@@ -373,6 +380,10 @@ public void PositionUpdate(){
             }
             //velocity+=Vector3.forward*PhysicsSettings.gravity*gravityScale;
         }
+    
+
+
+        //position update
        
         if(!fixZ){
             zpos+=zvel*PhysicsSettings.deltatime;
@@ -451,7 +462,7 @@ public void PositionUpdate(){
 
                 //entites directly above
                 //probably loose
-                 if(z >= zpos+height - Mathf.Abs(zv) - Mathf.Abs(zvel) - PhysicsSettings.slop && z<= zpos + height+1f){
+                 if(z >= zpos+height/* - Mathf.Abs(zv) - Mathf.Abs(zvel) */- PhysicsSettings.slop && z <= zpos + height){
                     entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
                     other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyBelow.Add(gameObject);
 
@@ -465,7 +476,7 @@ public void PositionUpdate(){
                
 
             }//end of for
-                UpdateGrounded();
+               // UpdateGrounded();
             if (belowWithSpace!=null){
                 entitiesDirectlyBelowWithSpace.Add(belowWithSpace);
                 belowWithSpace.GetComponent<Physics>().entitiesDirectlyAboveWithSpace.Add(gameObject);
@@ -474,7 +485,16 @@ public void PositionUpdate(){
 
 
 
+public void SetParents(){
 
+  if(entitiesDirectlyBelow.Count>0){
+                    //xvel = entitiesDirectlyBelow[0].GetComponent<Physics>().xvel;
+                   // yvel = entitiesDirectlyBelow[0].GetComponent<Physics>().yvel;
+                   transform.parent = entitiesDirectlyBelow[0].transform;
+                  } else{
+                    transform.parent = null;
+                  }
+}
 public void ResolveCollisions(){
         if(isTrigger)return;
         List<RaycastHit2D> results=new List<RaycastHit2D>();
@@ -496,7 +516,7 @@ public void ResolveCollisions(){
                  
             }
 
-        //ground friction
+          //ground friction
           if(entitiesDirectlyBelow.Count==0 && zpos<=zfloor){
                 if(!fixXvel){
                     xvel*=0.99f;
@@ -509,14 +529,14 @@ public void ResolveCollisions(){
             }
 
             //parenting
-            if(entitiesDirectlyBelow.Count>0){
+           /* if(entitiesDirectlyBelow.Count>0){
                     //xvel = entitiesDirectlyBelow[0].GetComponent<Physics>().xvel;
                    // yvel = entitiesDirectlyBelow[0].GetComponent<Physics>().yvel;
                    transform.parent = entitiesDirectlyBelow[0].transform;
                   } else{
                     transform.parent = null;
                   }
-
+*/
          float maxfloor=-1000000f;
         while(num_completed_iters<1 &&
 
@@ -531,14 +551,6 @@ public void ResolveCollisions(){
 
             num_completed_iters++;
 
-            //print(gameObject.name+" number of hits: "+results.Count);
-            
-
-            //ground friction
-            //modify to give correct equations later
-           
-            
-
             
             //block to block collisions
             foreach(RaycastHit2D hit in results){
@@ -550,41 +562,47 @@ public void ResolveCollisions(){
                
                
                 #region retrieve variables of other object
+                Physics other_physics = other_collider.transform.parent.GetComponent<Physics>();
 	                float x= other_collider.transform.position.x;
 	                float y= other_collider.transform.position.y;
-	                float z =other_collider.transform.parent.GetComponent<Physics>().zpos;
-	                float zv=other_collider.transform.parent.GetComponent<Physics>().zvel;
-	                float w=other_collider.transform.parent.GetComponent<Physics>().width;
-	                float xv=other_collider.transform.parent.GetComponent<Physics>().xvel;
-	                float h=other_collider.transform.parent.GetComponent<Physics>().height;
-	                float d=other_collider.transform.parent.GetComponent<Physics>().depth;
-	                float yv=other_collider.transform.parent.GetComponent<Physics>().yvel;
-	                float zf=other_collider.transform.parent.GetComponent<Physics>().zfloor;
-	                float m=other_collider.transform.parent.GetComponent<Physics>().mass;
-	                float r=other_collider.transform.parent.GetComponent<Physics>().restitution;
-                    float other_df=other_collider.transform.parent.GetComponent<Physics>().dynamicFriction;
-                    float other_sf=other_collider.transform.parent.GetComponent<Physics>().staticFriction;
-                    float im= other_collider.transform.parent.GetComponent<Physics>().inv_mass;
-                    Vector3 other_pos = other_collider.transform.parent.GetComponent<Physics>().position;
-                    Vector3 other_vel = other_collider.transform.parent.GetComponent<Physics>().velocity;
-                    bool it = other_collider.transform.parent.GetComponent<Physics>().isTrigger;
+	                float z =other_physics.zpos;
+	                float zv=other_physics.zvel;
+	                float w=other_physics.width;
+	                float xv=other_physics.xvel;
+	                float h=other_physics.height;
+	                float d=other_physics.depth;
+	                float yv=other_physics.yvel;
+	                float zf=other_physics.zfloor;
+	                float m=other_physics.mass;
+	                float r=other_physics.restitution;
+                    float other_df=other_physics.dynamicFriction;
+                    float other_sf=other_physics.staticFriction;
+                    float im= other_physics.inv_mass;
+                    Vector3 other_pos = other_physics.position;
+                    Vector3 other_vel = other_physics.velocity;
+                    bool it = other_physics.isTrigger;
 
                 #endregion
 
                 if(it)continue;
                 //if not colliding
-                if(zpos>=z+h){
+                //if i'm above it
+                if(zpos>z+h){
                      maxfloor = Mathf.Max(z+h,maxfloor);
                 }
-               
+               //if im below it
                 if((zpos > z+h || zpos+height<z )){continue;}
+
+  
                 numhits++;
 
               
-                //rv of this relative to other
+                //relative velocity of this object relative to other object
                 Vector3 relative_velocity = new Vector3(xvel-xv,yvel-yv,zvel-zv);
                 //vector from this to other
-                Vector3 relative_position = new Vector3(other_collider.transform.position.x-_collider2D.transform.position.x,other_collider.transform.position.y-_collider2D.transform.position.y,z-zpos);
+                Vector3 relative_position = new Vector3(other_collider.transform.position.x-_collider2D.transform.position.x,
+                                                        other_collider.transform.position.y-_collider2D.transform.position.y,
+                                                        z-zpos);
                 Vector3 penetration_depth = new Vector3(
                                         relative_position.x>0?Mathf.Abs(_collider2D.transform.position.x+width/2 - (other_collider.transform.position.x-w/2)):Mathf.Abs(other_collider.transform.position.x+w/2 - (_collider2D.transform.position.x-width/2)),
                                         relative_position.y>0?Mathf.Abs(_collider2D.transform.position.y+depth/2 - (other_collider.transform.position.y-d/2)):Mathf.Abs(other_collider.transform.position.y+d/2 - (_collider2D.transform.position.y-depth/2)),
@@ -600,7 +618,7 @@ public void ResolveCollisions(){
                 Vector3 normal = Vector3.zero;
 
                 float smallest_axis = Mathf.Min(penetration_depth.x,Mathf.Min(penetration_depth.y,penetration_depth.z));
-
+               
                 #region compute normal
 	                if(smallest_axis == penetration_depth.x){
 	                    
@@ -623,7 +641,7 @@ public void ResolveCollisions(){
                 float min_restitition = Mathf.Min(restitution,r);
 
                 float velocity_along_normal=Vector3.Dot(relative_velocity,normal);
-                
+                // print("PENETRATION DEPTH: "+gameObject.name + " , "+other_collider.transform.parent.gameObject.name+" , " + penetration_depth);
                 if(velocity_along_normal>=0){
            /*         
                     #region preliminary position correction
@@ -674,15 +692,15 @@ public void ResolveCollisions(){
                 Vector3 impulse = normal* -(1+min_restitition) * velocity_along_normal / reciprocal_mass_sum;
 
                 #region velocity computation
-	                    if(!other_collider.transform.parent.GetComponent<Physics>().fixXvel){
-	                          other_collider.transform.parent.GetComponent<Physics>().xvel-= impulse.x*im;
+	                    if(!other_physics.fixXvel){
+	                          other_physics.xvel-= impulse.x*im;
 	                    }
-	                    if(!other_collider.transform.parent.GetComponent<Physics>().fixYvel){
-	                          other_collider.transform.parent.GetComponent<Physics>().yvel-= impulse.y*im;
+	                    if(!other_physics.fixYvel){
+	                          other_physics.yvel-= impulse.y*im;
 	
 	                    }
-	                    if(!other_collider.transform.parent.GetComponent<Physics>().fixZvel){
-	                             other_collider.transform.parent.GetComponent<Physics>().zvel-= impulse.z*im;
+	                    if(!other_physics.fixZvel){
+	                             other_physics.zvel-= impulse.z*im;
 	
 	                    }
 	                    if(!fixXvel){
@@ -725,9 +743,9 @@ public void ResolveCollisions(){
                             //entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
                             //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyBelow.Add(gameObject);
                         }else{
-                            if(!fixZ){
-                                 zpos+= (normal.z)*(smallest_axis);
-                            }
+                           // if(!fixZ){
+                        //         zpos+= (normal.z)*(smallest_axis);
+                         //   }
                            
 
                             //entitiesDirectlyBelow.Add(other_collider.transform.parent.gameObject);

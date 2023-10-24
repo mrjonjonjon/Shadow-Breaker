@@ -320,11 +320,7 @@ void Update(){
         }
         */
         
-        if(phys.isGrounded){
-            anim.SetBool("grounded",true);
-        }else{
-            anim.SetBool("grounded",false);
-        }
+
         /*
        if(_movementState==null){
         _movementState = PlayerState._idleMovementState;
@@ -351,6 +347,11 @@ void Update(){
         //update groundedstate
         phys.UpdateGrounded();
 
+        if(phys.isGrounded){
+            anim.SetBool("grounded",true);
+        }else{
+            anim.SetBool("grounded",false);
+        }
         handleJumping();
 
         handleHook();
@@ -452,6 +453,7 @@ void Update(){
             
             
         }
+        
         //handle attack buffer
         if(attackBuffer && !_hitBoxScript.applyingHitstop){
                         attackBuffer=false;

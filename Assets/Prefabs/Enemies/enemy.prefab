@@ -263,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102234389}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.55, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,15 +325,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1672867015, guid: 15b454c8e5bc74f66b5a1877ba13f002, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2, y: 1.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1656431684
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656431684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -388,7 +388,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 397dd9bb2cdc04b169ceae31fba2e6c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -482,14 +482,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodSplat: {fileID: 6893207322674522010, guid: 54c2e7b0d926c49fcae1da385a206c20, type: 3}
-  hp: 500
+  hp: 5
   knockbackMultiplier: 0
   flashMaterial: {fileID: 2100000, guid: 44579475e3c7246af8356ae961f12082, type: 2}
   anim: {fileID: 4408603383571494079}
   ps: {fileID: 8990024754261795058}
   OnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1237613925375993386}
+        m_TargetAssemblyTypeName: Damageable, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   parriedSFX: {fileID: 8300000, guid: e802fc006f8ae4f8a888a6047626db0d, type: 3}
   audioSource: {fileID: 0}
   rb: {fileID: 839833191}
@@ -514,6 +526,7 @@ GameObject:
   - component: {fileID: 7720340068690203415}
   - component: {fileID: 1805124276}
   - component: {fileID: 1267180676}
+  - component: {fileID: 2898439888166140479}
   m_Layer: 3
   m_Name: enemy
   m_TagString: enemy
@@ -796,6 +809,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe41151cba6d4f5ca2468be3847edb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _contactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   lockGravityScale: 0
   ignorePositionUpdate: 0
   originalGravityScale: 0
@@ -850,6 +877,25 @@ SortingGroup:
   m_SortingLayerID: 766929169
   m_SortingLayer: 6
   m_SortingOrder: 5
+--- !u!114 &2898439888166140479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375897187557423501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b261a39f2e74bf69c5cada17916674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 647834653}
+  allShadows: []
+  shadowPrefab: {fileID: 0}
+  spriteMask: {fileID: 0}
+  selfShadow: {fileID: 0}
+  drawShadows: 0
+  shadowFactor: 0
 --- !u!1001 &5271929794783767920
 PrefabInstance:
   m_ObjectHideFlags: 0

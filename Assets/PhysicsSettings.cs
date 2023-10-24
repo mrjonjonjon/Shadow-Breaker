@@ -4,16 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "phys", menuName = "ScriptableObjects/physics", order = 1)]
 public class PhysicsSettings: ScriptableObject
 {
-    public static float gravity=-0.1f;
+    public static float gravity=-0.1f;//-0.1
     public static bool friction =true;
     public static float frictionAmount=5f;
     public static float maxzvelup=1f;//Mathf.Infinity;
     public static float maxzveldown=0.25f;
     public static float deltatime=1f;
-    public static float correctionRatio=0.5f;
-    public static float slop=0.01f;
+    public static float correctionRatio=1f;//0.5
+    public static float slop=0.01f;//0.01
     //this should be roughly double the maximum stack size for stability
-    public static int num_iterations = 6;
+    public static int num_iterations = 6;//6
    // public static float contactThreshold=
        // public enum EntityType{Player, Box};
     
