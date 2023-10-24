@@ -44,7 +44,7 @@ public bool dashBuffer=false;
 
 public Direction lastDirection=Direction.down;
 public float playerSpeed=1.0f;
- public float staticPlayerSpeed;
+public float staticPlayerSpeed;
 
 //deltas for Update. Fixed-Update deltas stored in physics component
 public Vector3 lastPos;

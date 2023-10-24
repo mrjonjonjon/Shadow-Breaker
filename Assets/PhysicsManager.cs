@@ -11,16 +11,25 @@ public class PhysicsManager : MonoBehaviour
    public UnityEvent OnFinishAllPhysicsUpdates;
     public int totalPhysicsUpdates=0;
 
-
+#region declarations
     public static PhysicsManager instance;
     public List<Physics> allObjects;
-   public static int maxLevels=50;
+    public static int maxLevels=50;
     public int idCounter=0;
+
+#endregion
+
+
+    //add object to phyics engine update queue
    public void RegisterEntity(Physics p){
     allObjects.Add(p);
     p.entityID=idCounter;
     idCounter++;
    }
+
+
+
+   
     void Start(){
         if(instance==null){
             instance=this;
