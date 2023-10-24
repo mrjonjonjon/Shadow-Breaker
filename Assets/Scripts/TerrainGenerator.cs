@@ -32,19 +32,20 @@ int GetHeight(TileBase tb){
         return 0;
     }
 }
-public void Update(){
-if(GENERATE){
-    GENERATE=false;
-    x();
-}
-}
-void x()
-{
+        public void Update(){
+            if(GENERATE){
+                GENERATE=false;
+                x();
+            }
+        }
+        
+    void x()
+    {
 
     foreach(Tilemap tilemap in tilemaps){
                                        //  tilemap.GetComponent<TilemapRenderer>().SetEnabled(false);
 
-            for (int y = tilemap.cellBounds.yMax; y >= tilemap.cellBounds.yMin; y--){
+            for (int y = tilemap.cellBounds.yMax; y >= tilemap.cellBounds.yMin; y--){//top to bottom order so that walls are overwritten
 
                 for (int x = tilemap.cellBounds.xMin; x <= tilemap.cellBounds.xMax; x++){
                 

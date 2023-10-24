@@ -166,7 +166,7 @@ public void SetZFloor(){
                                         if(GameObject.ReferenceEquals(gameObject, col.transform.parent.gameObject))continue;
                                         Physics p = col.transform.parent.GetComponent<Physics>();
                                        // if(p==null){continue;} 
-                                       if(col.gameObject.GetComponent<Tilemap>()==null){continue;}
+                                       if(col.gameObject.GetComponent<Tilemap>()==null){print("tilemap not found");}
                                         if(p!=null && zpos>=p.zpos+p.height){maxtilefloor=Mathf.Max(maxtilefloor,p.zpos+p.height);}
                                        
                                         Tilemap tilemap = col.gameObject.GetComponent<Tilemap>();
