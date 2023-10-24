@@ -13,9 +13,10 @@ public class PhysicsVisuals : MonoBehaviour
                   public GameObject selfShadow;
                   public bool drawShadows;
                   public float shadowFactor;
+                  public Physics _physics;
 
 
-//lateupdate because we want this to run after animator has updated
+//lateupdate because we want this to run after animator has updated. can force an update manually later
 void LateUpdate(){
                         
                         float width=GetComponent<Physics>().width;
@@ -28,26 +29,46 @@ void LateUpdate(){
                         SpriteRenderer _srTop=GetComponent<Physics>()._srTop;
                         Collider2D _collider2D=GetComponent<Physics>()._collider2D;
                        // s.pivot.y/s.pixelsPerUnit
-                        float distance = (_spriteRenderer.sprite.pivot.y/_spriteRenderer.sprite.pixelsPerUnit);
+                      
+                        if(entityType==Physics.EntityType.Box){
+                                //set collider width and depth sizes
+                                ((BoxCollider2D)_collider2D).size= new Vector2(width,depth);
+                                
+                                //set top,bottom sprite sizes
+                                _srBottom.size=new Vector2(width,height); 
+                                _srTop.size=new Vector2(width,depth);
+
+                                //fix collider2d pos to pivot
+                                _collider2D.transform.localPosition=Vector3.zero;
+
+                                //offset sprite bottom and sprite top to match up correctly
+                                //0.3141892f is the y pivot point of the srbottom sprite
+                                _srBottom.transform.position = new Vector3(_collider2D.transform.position.x,
+                                                                           _collider2D.transform.position.y + height*(0.3141892f) - depth/2f + zpos,
+                                                                           -zpos - height*(0.3141892f));
+                                _srTop.transform.position=new Vector3(_srBottom.transform.position.x,
+                                                                      _srBottom.bounds.max.y+depth/2,
+                                                                      _srBottom.transform.position.z-height*(1f-0.3141892f));
+
+                                if(transform.Find("sprite")!=null){
+                            
+                                 // Sprite s =transform.Find("sprite/bottom").GetComponent<SpriteRenderer>().sprite;
+                                //  float distance = height*0.3141892f;
+                                //  transform.Find("sprite").localPosition= (Vector3.up-Vector3.forward) * zpos
+                                //  -distance*Vector3.forward;
+                                   
+                                }
+                  
+                        
+
+                      }else{
+                        //dworldspace distance from bottom of sprite to pivot
+                          float distance = (_spriteRenderer.sprite.pivot.y/_spriteRenderer.sprite.pixelsPerUnit);
 
                           if(transform.Find("sprite")!=null){
                                  transform.Find("sprite").localPosition= (Vector3.up-Vector3.forward) * zpos 
                                  -Vector3.forward*(distance)*transform.Find("sprite").localScale.x;//new Vector3(transform.Find("sprite").localPosition.x,  zpos/transform.localScale.y,0);
                           }
-
-                        if(entityType==Physics.EntityType.Box){
-                  
-                                ((BoxCollider2D)_collider2D).size= new Vector2(width,depth);
-
-                                _srBottom.size=new Vector2(width,height); 
-                                _srTop.size=new Vector2(width,depth);
-                                _collider2D.transform.localPosition=Vector3.up*depth/2f;
-                                _srBottom.transform.localPosition = Vector3.zero;
-                                _srTop.transform.position=new Vector3(_srBottom.transform.position.x,_srBottom.bounds.max.y,_srBottom.transform.position.z-height);
-
-            
-                  
-
                       }
                 }
 }

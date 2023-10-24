@@ -23,41 +23,36 @@ public class Damageable : MonoBehaviour
 
      public bool parryable=false;
      public SpriteRenderer sr;
-    // Start is called before the first frame update
     void Start()
     {
 
           oc =   sr.material;
-         // ps=transform.Find("Particles").GetComponent<ParticleSystem>();
-          //anim=GetComponent<Animator>();
-        
           audioSource=GetComponent<AudioSource>();
          
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-public void Parried(){
-    anim.SetTrigger("parried");
-    audioSource.PlayOneShot(parriedSFX);
+    public void Parried(){
+        anim.SetTrigger("parried");
+        audioSource.PlayOneShot(parriedSFX);
 
-}
+    }
+
     public void Die(){
+        transform.parent.Find("puddlereflection").GetComponent<PuddleReflectionScript>().DeActivate();
         dead=true;
         transform.DetachChildren();
         //spawner is subscribed to ondie
 
         //rigidbody stuff
-       // rb.gravityScale=1;
-        //rb.drag=0;
-        //rb.constraints=RigidbodyConstraints2D.None;
-        //rb.velocity=5*(Random.insideUnitCircle.normalized);
-        //rb.angularVelocity=600f;
+        rb.gravityScale=1;
+        rb.drag=0;
+        rb.constraints=RigidbodyConstraints2D.None;
+        rb.velocity= 5f*Vector2.up + 1*(Random.insideUnitCircle.normalized);
+        rb.angularVelocity=1200f;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        
 
 
         OnDie.Invoke();
