@@ -375,7 +375,7 @@ public bool IsGrounded(){
         isGrounded=false;
     }
     if(isGrounded){
-        zvel=0f;
+       // zvel=0f;
     }
 }
 
@@ -529,7 +529,7 @@ public void ResolveCollisions(){
                     }
                  
             }
-
+/*
           //ground friction
           if(entitiesDirectlyBelow.Count==0 && zpos<=zfloor){
                 if(!fixXvel){
@@ -541,6 +541,7 @@ public void ResolveCollisions(){
                     //velocity.y*=0.99f;
                 }
             }
+            */
 
             //parenting
            /* if(entitiesDirectlyBelow.Count>0){
@@ -720,9 +721,9 @@ public void ResolveCollisions(){
                 
                 #region velocity computation
                 
-                if(velocity_along_normal<=0){
+                if(velocity_along_normal<0){
 
-                  	                    if(!other_physics.fixXvel){
+                  	    if(!other_physics.fixXvel){
 	                          other_physics.xvel-= impulse.x*im;
 	                    }
 	                    if(!other_physics.fixYvel){
@@ -826,7 +827,7 @@ public void ResolveCollisions(){
 	                    // Apply 
 	                    A->velocity -= (1 / A->mass) * frictionImpulse
 	                    B->velocity += (1 / B->mass) * frictionImpulse
-	                    */
+	                    
 	                   
                         
 	                    Vector3 tangent = relative_velocity;// - Vector3.Dot(relative_velocity,normal)*normal;
@@ -854,7 +855,7 @@ public void ResolveCollisions(){
 	                        other_collider.transform.parent.GetComponent<Physics>().yvel-=friction_impulse.y*im;
 	                          other_collider.transform.parent.GetComponent<Physics>().zvel-=friction_impulse.z*im;
 
-                              
+                              */
                         #endregion
 
                   

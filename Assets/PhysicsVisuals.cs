@@ -31,6 +31,7 @@ void LateUpdate(){
                        // s.pivot.y/s.pixelsPerUnit
                       
                         if(entityType==Physics.EntityType.Box){
+                          //print(gameObject.name + zpos);
                                 //set collider width and depth sizes
                                 ((BoxCollider2D)_collider2D).size= new Vector2(width,depth);
                                 
