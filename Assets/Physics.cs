@@ -129,6 +129,7 @@ public void Start(){
 
 }
 //resolve collisions for entity-tile interactions
+//TODO: change logic so it works for non-player entities too
 public void SetZFloor(){
     if(isTrigger)return;
         //int num_completed_iters=0;
@@ -160,18 +161,19 @@ public void SetZFloor(){
                                     Vector2 hitpoint=Vector2.zero;
                                     foreach(RaycastHit2D hit in results){
 
-                                
+                  
                                         Collider2D col=hit.collider;
-                                        if(col.transform.parent==null)continue;
+                                        //if(col.transform.parent==null)continue;
                                         if(GameObject.ReferenceEquals(gameObject, col.transform.parent.gameObject))continue;
                                         Physics p = col.transform.parent.GetComponent<Physics>();
+
                                        // if(p==null){continue;} 
-                                       if(col.gameObject.GetComponent<Tilemap>()==null){print("tilemap not found");}
+                                       if(col.gameObject.GetComponent<Tilemap>()==null){print("tilemap not found");continue;}
                                         if(p!=null && zpos>=p.zpos+p.height){maxtilefloor=Mathf.Max(maxtilefloor,p.zpos+p.height);}
                                        
                                         Tilemap tilemap = col.gameObject.GetComponent<Tilemap>();
                                         Vector3 extremum=Vector3.zero;
-                                        //test the 4 corners of this collider
+                                        //test the 4 corners of this collider. only works for small things
                                         for(int j=0;j<4;j++){
                                             if(j==0){
                                                 extremum = _collider2D.bounds.min;
@@ -186,6 +188,11 @@ public void SetZFloor(){
 
 
                                                         TileBase tile = tilemap.GetTile(tilemap.WorldToCell((Vector3)extremum));
+                                                        if(gameObject.name=="rock"){
+                                                            print(col.transform.gameObject.name);
+                                                            print(tile);
+                                                        } 
+                                                       
                                                         if(tile==null)continue;
                                                         //tilemap.SetColor(tilemap.WorldToCell((Vector3)extremum), new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)));
                                                         
@@ -231,8 +238,9 @@ public void SetZFloor(){
                                                                 hitpoint=hit.point;
                                                             }                                            
 
-                                            
-
+print("mtf");
+print(gameObject.name);                                   
+print(maxtilefloor);
                                         }
                                        
                                 }//end of foreach
@@ -439,6 +447,7 @@ public void PositionUpdate(){
                 
                
                 #region get properties of other object
+                    Physics other_physics = other_collider.transform.parent.GetComponent<Physics>();
 	                float z =other_collider.transform.parent.GetComponent<Physics>().zpos;
 	                float zv=other_collider.transform.parent.GetComponent<Physics>().zvel;
 	                float w=other_collider.transform.parent.GetComponent<Physics>().width;
@@ -465,9 +474,9 @@ public void PositionUpdate(){
                 }
 
 
-                //entites directly above
+                //entites directly above this
                 //probably loose
-                 if(z >= zpos+height/* - Mathf.Abs(zv) - Mathf.Abs(zvel) */- PhysicsSettings.slop && z <= zpos + height){
+                 if(z >= zpos+height-0.5 && z <= zpos + height){
                     entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
                     other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyBelow.Add(gameObject);
 
@@ -769,10 +778,10 @@ public void ResolveCollisions(){
                         smallest_axis*=PhysicsSettings.correctionRatio;
                        
 
-                        position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
-                        other_physics.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
-                       /* if(relative_position.z>0){
-                           
+                        //position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
+                        //other_physics.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
+                        if(relative_position.z>0){
+                           //only correct the one on top(fully)
                             other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis);
 
                             //entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
@@ -787,7 +796,7 @@ public void ResolveCollisions(){
                             //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyAbove.Add(gameObject);
 
 
-                        }*/
+                        }
 	                    //zpos+= (normal.z)*(smallest_axis) /(mass* reciprocal_mass_sum);
 	                    //other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis)  /(m * reciprocal_mass_sum);
 	

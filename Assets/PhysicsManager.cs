@@ -143,9 +143,22 @@ public class PhysicsManager : MonoBehaviour
            foreach(Physics p in allObjects){
             p.UpdateGrounded();
          }
+/*
+            foreach(Physics p in allObjects)
+                {
+                    float discretizationAmount = 0.2f;  // Change this value to your desired discretization increment
+
+                    float discretizedX = Mathf.Round(p.position.x / discretizationAmount) * discretizationAmount;
+                    float discretizedY = Mathf.Round(p.position.y / discretizationAmount) * discretizationAmount;
+                    float discretizedZ = Mathf.Round(p.position.z / discretizationAmount) * discretizationAmount;
+
+                    p.position = new Vector3(discretizedX, discretizedY, discretizedZ);
+                }
+
+                */
 
          foreach(Physics p in allObjects){
-            p.SetParents();
+           p.SetParents();
          }
 
          OnFinishAllPhysicsUpdates.Invoke();
