@@ -1,0 +1,9 @@
+stuff to add
+
+jetpack
+grappling hook
+story
+fix ui stuff
+fix combat
+stairs
+consider removing z-axis collisions and just set zfloors instead like with tile system.
