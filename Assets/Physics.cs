@@ -431,16 +431,22 @@ public void PositionUpdate(){
             int num_completed_iters=0;
             int num_entites_above_or_below=Physics2D.BoxCast(_collider2D.gameObject.transform.position,_collider2D.bounds.size, 0f, Vector2.zero, _contactFilter,results,Mathf.Infinity); 
 
+
+
+
+
             GameObject go=null;
             float mymax=-Mathf.Infinity;
 
             GameObject belowWithSpace=null;
             float highestBelow=-100000f;
             float smallestYBelow=10000000f;
+                if(gameObject.name=="Player"){print(num_entites_above_or_below);}
 
             foreach(RaycastHit2D hit in results){
                 
-                Collider2D other_collider=hit.collider;
+                Collider2D other_collider=hit.collider;     
+
                 if(other_collider.gameObject.tag!="PhysicsEntity")continue;
                 if(GameObject.ReferenceEquals( gameObject, other_collider.transform.parent.gameObject))continue;
               
@@ -465,7 +471,7 @@ public void PositionUpdate(){
                 //if at or below this...
                 if(z <= zpos+height){
                     //NOTE:abs(zv)+abs(zvel) is probably too loose. prob also need slop
-                    if(z+h< zpos  + Mathf.Abs(zv)+Mathf.Abs(zvel) +PhysicsSettings.slop && 
+                    if(z+h< zpos+0.5 && 
                     z>=highestBelow /*&& other_collider.transform.parent.position.y<smallestYBelow*/){
                             highestBelow=z;
                             smallestYBelow=other_collider.transform.parent.position.y;

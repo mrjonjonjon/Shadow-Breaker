@@ -29,7 +29,26 @@ void LateUpdate(){
                         SpriteRenderer _srTop=GetComponent<Physics>()._srTop;
                         Collider2D _collider2D=GetComponent<Physics>()._collider2D;
                        // s.pivot.y/s.pixelsPerUnit
-                      
+                        if(entityType==Physics.EntityType.Player &&transform.Find("collider/shadow")!=null){
+                                  if(_physics.entitiesDirectlyBelowWithSpace.Count>0){
+                                        transform.Find("collider/shadow").localPosition = new Vector3(0,
+                                        _physics.entitiesDirectlyBelowWithSpace[0].GetComponent<Physics>().zpos+
+                                        _physics.entitiesDirectlyBelowWithSpace[0].GetComponent<Physics>().height
+
+                                        
+                                        ,-(0.2f+_physics.entitiesDirectlyBelowWithSpace[0].GetComponent<Physics>().zpos+
+                                        _physics.entitiesDirectlyBelowWithSpace[0].GetComponent<Physics>().height));
+
+                                  }else{
+                                         transform.Find("collider/shadow").localPosition = new Vector3(0,0,0);
+                                  }
+                            
+                                 // Sprite s =transform.Find("sprite/bottom").GetComponent<SpriteRenderer>().sprite;
+                                //  float distance = height*0.3141892f;
+                                //  transform.Find("sprite").localPosition= (Vector3.up-Vector3.forward) * zpos
+                                //  -distance*Vector3.forward;
+                                   
+                        }
                         if(entityType==Physics.EntityType.Box){
                           //print(gameObject.name + zpos);
                                 //set collider width and depth sizes
@@ -51,14 +70,7 @@ void LateUpdate(){
                                                                       _srBottom.bounds.max.y+depth/2,
                                                                       _srBottom.transform.position.z-height*(1f-0.3141892f));
 
-                                if(transform.Find("sprite")!=null){
-                            
-                                 // Sprite s =transform.Find("sprite/bottom").GetComponent<SpriteRenderer>().sprite;
-                                //  float distance = height*0.3141892f;
-                                //  transform.Find("sprite").localPosition= (Vector3.up-Vector3.forward) * zpos
-                                //  -distance*Vector3.forward;
-                                   
-                                }
+               
                   
                         
 
