@@ -930,7 +930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214682277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2072,11 +2072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587958501653757235, guid: 2f9a31fa52fbb4eee9fa8fd26f4a781a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -226.3
+      value: -208.8
       objectReference: {fileID: 0}
     - target: {fileID: 7587958501653757235, guid: 2f9a31fa52fbb4eee9fa8fd26f4a781a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41.5
+      value: -42.3
       objectReference: {fileID: 0}
     - target: {fileID: 7587958501653757235, guid: 2f9a31fa52fbb4eee9fa8fd26f4a781a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2172,11 +2172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d513d3d4a06456c9e5ed489989e686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 17.28
-  depth: 5
+  width: 35
+  depth: 4.92
   direction: 12
   z_bot: 0
-  z_top: 0
+  z_top: 16.67
   interpolation_factor: 0
   _contactFilter:
     useTriggers: 1
@@ -4690,7 +4690,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.28, y: 5}
+  m_Size: {x: 35, y: 4.92}
   m_EdgeRadius: 0
 --- !u!4 &1080610706 stripped
 Transform:
@@ -7769,8 +7769,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728951674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.33}
-  m_LocalScale: {x: 20, y: 1.37, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 35, y: 4.92, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 214682278}
