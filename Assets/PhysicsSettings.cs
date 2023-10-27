@@ -8,9 +8,9 @@ public class PhysicsSettings: ScriptableObject
     public static bool friction =true;
     public static float frictionAmount=5f;
     public static float maxzvelup=Mathf.Infinity;
-    public static float maxzveldown=4f;
+    public static float maxzveldown=2f;
     public static float deltatime=1f;
-    public static float correctionRatio=0.2f;//0.5
+    public static float correctionRatio=0.9f;//0.5. need higher ratio for big stacks
     public static float slop=0.1f;//0.01
     //this should be roughly double the maximum stack size for stability
     public static int num_iterations = 6;//6
