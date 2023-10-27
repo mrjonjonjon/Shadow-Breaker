@@ -90,6 +90,7 @@ public class PhysicsManager : MonoBehaviour
               p.entitiesBelow.Clear();
               p.positionUpdated=false;
               p.collisionsResolved=false;
+              p.zfloor=0f;
              
         }
       
@@ -128,7 +129,7 @@ public class PhysicsManager : MonoBehaviour
        
         foreach(Physics p in allObjects){
                     if(p.entityType==Physics.EntityType.Prop){continue;}
-                    p.SetZFloor();       
+                   p.SetZFloor();       
         }
 
         foreach(Physics p in allObjects){
@@ -143,19 +144,6 @@ public class PhysicsManager : MonoBehaviour
            foreach(Physics p in allObjects){
             p.UpdateGrounded();
          }
-/*
-            foreach(Physics p in allObjects)
-                {
-                    float discretizationAmount = 0.2f;  // Change this value to your desired discretization increment
-
-                    float discretizedX = Mathf.Round(p.position.x / discretizationAmount) * discretizationAmount;
-                    float discretizedY = Mathf.Round(p.position.y / discretizationAmount) * discretizationAmount;
-                    float discretizedZ = Mathf.Round(p.position.z / discretizationAmount) * discretizationAmount;
-
-                    p.position = new Vector3(discretizedX, discretizedY, discretizedZ);
-                }
-
-                */
 
          foreach(Physics p in allObjects){
            p.SetParents();

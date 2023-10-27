@@ -103,6 +103,7 @@ public class Physics : MonoBehaviour
 		[Header("Dimensions")]
 	    [Range(1f, 100f)]
 	    public float width,height,depth;
+
        // [HideInInspector]
 	    public Collider2D _collider2D;
 	    //for box type entities
@@ -168,7 +169,7 @@ public void SetZFloor(){
                                         Physics p = col.transform.parent.GetComponent<Physics>();
 
                                        // if(p==null){continue;} 
-                                       if(col.gameObject.GetComponent<Tilemap>()==null){print("tilemap not found");continue;}
+                                       if(col.gameObject.GetComponent<Tilemap>()==null){continue;}
                                         if(p!=null && zpos>=p.zpos+p.height){maxtilefloor=Mathf.Max(maxtilefloor,p.zpos+p.height);}
                                        
                                         Tilemap tilemap = col.gameObject.GetComponent<Tilemap>();
@@ -238,9 +239,7 @@ public void SetZFloor(){
                                                                 hitpoint=hit.point;
                                                             }                                            
 
-print("mtf");
-print(gameObject.name);                                   
-print(maxtilefloor);
+
                                         }
                                        
                                 }//end of foreach
@@ -257,7 +256,7 @@ print(maxtilefloor);
                                 }else{
                                         if(!foundFloor && maxtilefloor<-200){maxtilefloor=0f;}
                 
-                            zfloor = maxtilefloor;
+                            //zfloor = maxtilefloor;
                             //print("GOT HERE");
                             
                             return;
@@ -500,7 +499,18 @@ public void PositionUpdate(){
             if (belowWithSpace!=null){
                 entitiesDirectlyBelowWithSpace.Add(belowWithSpace);
                 belowWithSpace.GetComponent<Physics>().entitiesDirectlyAboveWithSpace.Add(gameObject);
+
+                float tzp=belowWithSpace.GetComponent<Physics>().zpos;
+                float th=belowWithSpace.GetComponent<Physics>().height;
+                if(zpos>tzp+th){
+                   // zfloor=tzp+th;
+                    //print(tzp+th);
+                    }
+
+                }else{
+                    zfloor=0f;
                 }
+            
 }
 
 
