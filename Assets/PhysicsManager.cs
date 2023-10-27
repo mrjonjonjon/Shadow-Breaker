@@ -90,7 +90,7 @@ public class PhysicsManager : MonoBehaviour
               p.entitiesBelow.Clear();
               p.positionUpdated=false;
               p.collisionsResolved=false;
-              p.zfloor=0f;
+              //p.zfloor=0f;
              
         }
       
@@ -121,7 +121,7 @@ public class PhysicsManager : MonoBehaviour
                 }
            }
 
-  //update above and below
+        //update above and below
         foreach(Physics p in allObjects){
                 if(p.entityType==Physics.EntityType.Prop){continue;}
                 p.UpdateEntitiesAboveAndBelow();
@@ -134,8 +134,7 @@ public class PhysicsManager : MonoBehaviour
 
         foreach(Physics p in allObjects){
                     if(p.entityType==Physics.EntityType.Prop){continue;}
-                    p.ReactToFluid();
-                      
+                    p.ReactToFluid();         
         }
 
          foreach(Physics p in allObjects){
@@ -149,7 +148,7 @@ public class PhysicsManager : MonoBehaviour
            p.SetParents();
          }
 
-         OnFinishAllPhysicsUpdates.Invoke();
+        OnFinishAllPhysicsUpdates.Invoke();
         totalPhysicsUpdates+=1;
     }
 }

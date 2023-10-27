@@ -12,11 +12,25 @@ public class Stairs : MonoBehaviour
     public float z_top;
     public float interpolation_factor;
     public ContactFilter2D _contactFilter;
+    public Rigidbody2D _rb2d;
+    public Material _stairsMat;
 
-    public Collider2D _collider2D;
+    public BoxCollider2D _collider2D;
 
+    void OnDrawGizmos()
+    {
+        float length = width;
+        float slope = (z_top-z_bot)/width;
+        Vector2 startPoint = (Vector2)transform.position-new Vector2(length, slope * length);
+        Vector2 endPoint = (Vector2)transform.position + new Vector2(length, slope * length);
+
+        Gizmos.color = Color.green; // Set the color for the gizmo line
+        Gizmos.DrawLine(startPoint, endPoint);
+    }
     void Update()
     {
+
+
 
 
 
@@ -59,7 +73,19 @@ public class Stairs : MonoBehaviour
                 float right_xpos = _collider2D.bounds.max.x;
                 interpolation_factor = (other_collider.transform.position.x-left_xpos)/(right_xpos-left_xpos);
                 float target_z_floor = Mathf.Lerp(z_bot,z_top,interpolation_factor);
-                other_physics.zfloor=Mathf.Max(zf,target_z_floor);
+                GameObject other_go = other_collider.transform.parent.gameObject;
+                if(other_physics.position.z>=target_z_floor-0.5){//be careful. if the slope is too steep, you'll phase through
+                       other_physics.zfloor=Mathf.Max(zf,target_z_floor);
+                }else{
+                    ColliderDistance2D distanceInfo = Physics2D.Distance(_collider2D, other_collider);
+                    other_physics.position-=(Vector3)(distanceInfo.normal * distanceInfo.distance);
+
+
+
+                }
+             
+
+
 
 
 

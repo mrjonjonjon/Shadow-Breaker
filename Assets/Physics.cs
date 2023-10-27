@@ -256,7 +256,7 @@ public void SetZFloor(){
                                 }else{
                                         if(!foundFloor && maxtilefloor<-200){maxtilefloor=0f;}
                 
-                            //zfloor = maxtilefloor;
+                            zfloor = maxtilefloor;
                             //print("GOT HERE");
                             
                             return;
@@ -399,6 +399,7 @@ public void PositionUpdate(){
        
         if(!fixZ){
             zpos+=zvel*PhysicsSettings.deltatime;
+            //zpos=Mathf.Max(zfloor,zpos);
             //position+=Vector3.forward*velocity.z*PhysicsSettings.deltatime;
 
         }
@@ -537,6 +538,7 @@ public void ResolveCollisions(){
             if(zpos<zfloor){  
                     //zpos=zfloor;
                     //zvel=0;//-restitution*zvel;   
+                   
                     if(!fixZ){
                       zpos=zfloor;  
                     }
