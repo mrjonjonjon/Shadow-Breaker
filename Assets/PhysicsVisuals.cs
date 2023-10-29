@@ -51,6 +51,7 @@ void LateUpdate(){
                         Physics.EntityType entityType=GetComponent<Physics>().entityType;
                         SpriteRenderer _srBottom=GetComponent<Physics>()._srBottom;
                         SpriteRenderer _srTop=GetComponent<Physics>()._srTop;
+                        
                         Collider2D _collider2D=GetComponent<Physics>()._collider2D;
                        // s.pivot.y/s.pixelsPerUnit
                         if(entityType==Physics.EntityType.Player &&transform.Find("collider/shadow")!=null){
@@ -87,12 +88,17 @@ void LateUpdate(){
 
                                 //offset sprite bottom and sprite top to match up correctly
                                 //0.3141892f is the y pivot point of the srbottom sprite
+
+                                //transform.Find("sprite").transform.position = new Vector3(0,0,-zpos);
                                 _srBottom.transform.position = new Vector3(_collider2D.transform.position.x,
-                                                                           _collider2D.transform.position.y + height*(0.3141892f) - depth/2f + zpos,
-                                                                           -zpos - height*(0.3141892f));
+                                                                           _collider2D.transform.position.y + height/2 - depth/2+zpos,
+                                                                           -zpos);
+                             // _srBottom.sharedMaterial.SetFloat("_Height", height);
                                 _srTop.transform.position=new Vector3(_srBottom.transform.position.x,
                                                                       _srBottom.bounds.max.y+depth/2,
-                                                                      _srBottom.transform.position.z-height*(1f-0.3141892f));
+                                                                      _srBottom.transform.position.z-height);
+
+
 
                
                   

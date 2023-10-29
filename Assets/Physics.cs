@@ -107,7 +107,7 @@ public class Physics : MonoBehaviour
        // [HideInInspector]
 	    public Collider2D _collider2D;
 	    //for box type entities
-        [HideInInspector]
+        //[HideInInspector]
 	    public SpriteRenderer _srTop,_srBottom;
 	
 	    //for player type entities
