@@ -45,6 +45,7 @@ public class PhysicsManager : MonoBehaviour
                 p.entityID=idCounter;
                 idCounter++;
         }
+        /*
         int CompareByZPos(Physics a, Physics b) {
             if (a.zpos < b.zpos) {
                 return -1;
@@ -57,6 +58,7 @@ public class PhysicsManager : MonoBehaviour
 
         // sort the list using the custom comparison function
         allObjects.Sort(CompareByZPos);
+        */
         
       
         // allObjects=;

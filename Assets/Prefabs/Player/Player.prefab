@@ -13957,7 +13957,7 @@ MonoBehaviour:
   dashMultiplier: 10
   dashTime: 0.05
   dashDistance: 3
-  jumpvel: {x: 0, y: 0, z: 0.31}
+  jumpvel: {x: 0, y: 0, z: 0.5}
   directionBuffer: {x: 0, y: 0}
   inputX: 0
   inputY: 0

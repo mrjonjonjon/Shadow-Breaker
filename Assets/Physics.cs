@@ -127,6 +127,11 @@ public class Physics : MonoBehaviour
 
 public void Start(){
    originalGravityScale = gravityScale;
+       if(infinite_mass){
+            inv_mass=0f;
+        }else{
+            inv_mass=1/mass;
+        }
 
 }
 //resolve collisions for entity-tile interactions
@@ -349,11 +354,7 @@ void FixedUpdate(){
         if(fixZ){zvel=0f;fixZvel=true;}
 
 
-        if(infinite_mass){
-            inv_mass=0f;
-        }else{
-            inv_mass=1/mass;
-        }
+    
         if(isTrigger){
             if(transform.Find("collider")){
                  //transform.Find("collider").GetComponent<Collider2D>().enabled=false;
@@ -398,20 +399,20 @@ public void PositionUpdate(){
         //position update
        
         if(!fixZ){
-            zpos+=zvel*PhysicsSettings.deltatime;
+            //zpos+=zvel*PhysicsSettings.deltatime;
             //zpos=Mathf.Max(zfloor,zpos);
-            //position+=Vector3.forward*velocity.z*PhysicsSettings.deltatime;
+            position+=Vector3.forward*velocity.z*PhysicsSettings.deltatime;
 
         }
 
         if(!fixX){
-            transform.position+=Vector3.right*xvel*PhysicsSettings.deltatime;
-            //position+=Vector3.right*velocity.x*PhysicsSettings.deltatime;
+            //transform.position+=Vector3.right*xvel*PhysicsSettings.deltatime;
+            position+=Vector3.right*velocity.x*PhysicsSettings.deltatime;
 
         }
         if(!fixY){
-            transform.position+=Vector3.up*yvel*PhysicsSettings.deltatime;
-           //position += Vector3.up*velocity.y*PhysicsSettings.deltatime;
+            //transform.position+=Vector3.up*yvel*PhysicsSettings.deltatime;
+           position += Vector3.up*velocity.y*PhysicsSettings.deltatime;
         }
         //z must always be 0. the sprite has the z offsrt, not the parent.
         //transform.position = new Vector3(position.x,position.y,0);
@@ -526,6 +527,8 @@ public void SetParents(){
                     transform.parent = null;
                   }
 }
+
+
 public void ResolveCollisions(){
         if(isTrigger)return;
         List<RaycastHit2D> results=new List<RaycastHit2D>();
@@ -547,30 +550,9 @@ public void ResolveCollisions(){
                     }
                  
             }
-/*
-          //ground friction
-          if(entitiesDirectlyBelow.Count==0 && zpos<=zfloor){
-                if(!fixXvel){
-                    xvel*=0.99f;
-                    //velocity.x*=0.99f;
-                }
-                if(!fixYvel){
-                    yvel*=0.99f;
-                    //velocity.y*=0.99f;
-                }
-            }
-            */
 
-            //parenting
-           /* if(entitiesDirectlyBelow.Count>0){
-                    //xvel = entitiesDirectlyBelow[0].GetComponent<Physics>().xvel;
-                   // yvel = entitiesDirectlyBelow[0].GetComponent<Physics>().yvel;
-                   transform.parent = entitiesDirectlyBelow[0].transform;
-                  } else{
-                    transform.parent = null;
-                  }
-*/
-         float maxfloor=-1000000f;
+        float maxfloor=-1000000f;
+
         while(num_completed_iters<1 &&
 
               Physics2D.BoxCast(
@@ -582,20 +564,20 @@ public void ResolveCollisions(){
                 results,
                 Mathf.Infinity)>=0){
 
-            num_completed_iters++;
+                num_completed_iters++;
 
             
-            //block to block collisions
-            foreach(RaycastHit2D hit in results){
+                //block to block collisions
+                foreach(RaycastHit2D hit in results){
 
-                //skip self and skip non physicsentities
-                Collider2D other_collider=hit.collider;
-                if(other_collider.gameObject.tag!="PhysicsEntity")continue;
-                if(GameObject.ReferenceEquals(gameObject, other_collider.transform.parent.gameObject))continue;
+                    //skip self and skip non physicsentities
+                    Collider2D other_collider=hit.collider;
+                    if(other_collider.gameObject.tag!="PhysicsEntity")continue;
+                    if(GameObject.ReferenceEquals(gameObject, other_collider.transform.parent.gameObject))continue;
                
                
-                #region retrieve variables of other object
-                Physics other_physics = other_collider.transform.parent.GetComponent<Physics>();
+                    #region retrieve variables of other object
+                    Physics other_physics = other_collider.transform.parent.GetComponent<Physics>();
 	                float x= other_collider.transform.position.x;
 	                float y= other_collider.transform.position.y;
 	                float z =other_physics.zpos;
@@ -615,54 +597,52 @@ public void ResolveCollisions(){
                     Vector3 other_vel = other_physics.velocity;
                     bool it = other_physics.isTrigger;
 
-                #endregion
+                    #endregion
 
-                if(it)continue;
-                //if not colliding
-                //if i'm above it
-                if(zpos>z+h){
-                     maxfloor = Mathf.Max(z+h,maxfloor);
-                }
-               //if im below it
-                if((zpos > z+h || zpos+height<z )){continue;}
+                    if(it)continue;
+                
+                    //if i'm above it
+                    if(zpos>z+h){
+                        maxfloor = Mathf.Max(z+h,maxfloor);
+                    }
+                    //if im below it
+                    if(zpos+height<z ){continue;}
 
   
-                numhits++;
+                    numhits++;
 
               
-                //relative velocity of this object relative to other object. 
-                //arrow is from other object to this object
-                Vector3 relative_velocity = new Vector3(xvel-xv,yvel-yv,zvel-zv);
+                    //relative velocity of this object relative to other object. 
+                    //arrow is from other object to this object
+                    Vector3 relative_velocity = new Vector3(xvel-xv,yvel-yv,zvel-zv);
                                             
-                //vector from this to other
-                Vector3 relative_position = new Vector3(other_collider.transform.position.x-_collider2D.transform.position.x,
-                                                        other_collider.transform.position.y-_collider2D.transform.position.y,
-                                                        z-zpos);
-                Vector3 penetration_depth = new Vector3(
+                    //vector from this to other
+                    Vector3 relative_position = other_physics.position - position;
+                    Vector3 penetration_depth = new Vector3(
                                         relative_position.x>0?//this object is to the left of other object
-                                                Mathf.Abs(_collider2D.transform.position.x+width/2 - (other_collider.transform.position.x-w/2)):
-                                                Mathf.Abs(other_collider.transform.position.x+w/2 - (_collider2D.transform.position.x-width/2)),
+                                                Mathf.Abs(position.x+width/2 - (other_physics.position.x-w/2)):
+                                                Mathf.Abs(position.x+w/2 - (other_physics.position.x-width/2)),
 
                                         relative_position.y>0?//this object is front of the other object
-                                                Mathf.Abs(_collider2D.transform.position.y+depth/2 - (other_collider.transform.position.y-d/2)):
-                                                Mathf.Abs(other_collider.transform.position.y+d/2 - (_collider2D.transform.position.y-depth/2)),
+                                                Mathf.Abs(position.y+depth/2 - (other_physics.position.y-d/2)):
+                                                Mathf.Abs(position.y+d/2 - (other_physics.position.y-depth/2)),
                                         //relative_position.y>0?Mathf.Abs(_collider2D.transform.position.y+depth - (other_collider.transform.position.y)):Mathf.Abs(other_collider.transform.position.y+d - (_collider2D.transform.position.y)),
 
                                         relative_position.z>0?//this object is under the other object
-                                                Mathf.Abs(zpos+height- z):
-                                                Mathf.Abs(z+h-zpos)
+                                                Mathf.Abs( position.z+height- other_physics.position.z):
+                                                Mathf.Abs(other_physics.position.z+other_physics.height-position.z)
                                         );
-                float reciprocal_mass_sum = im+inv_mass;
+                    float reciprocal_mass_sum = im+inv_mass;
                
 
-                //this will point in the direction THIS object will be moved after the collision.("The collision normal is the direction in which the impulse will be applied.")
-                //The penetration depth (along with some other things) determine how large of an impulse will be used.
-                // the dot product of this and relative velocity must be negative
-                Vector3 normal = Vector3.zero;
+                    //this will point in the direction THIS object will be moved after the collision.("The collision normal is the direction in which the impulse will be applied.")
+                    //The penetration depth (along with some other things) determine how large of an impulse will be used.
+                    // the dot product of this and relative velocity must be negative
+                    Vector3 normal = Vector3.zero;
 
-                float smallest_axis = Mathf.Min(penetration_depth.x,Mathf.Min(penetration_depth.y,penetration_depth.z));
+                    float smallest_axis = Mathf.Min(penetration_depth.x,Mathf.Min(penetration_depth.y,penetration_depth.z));
                
-                #region compute collision normal based on rel. position
+                    #region compute collision normal based on rel. position
 	                if(smallest_axis == penetration_depth.x){
 	                    //if this object is to the right, move it to the right, otherwise left
 	                    normal = Vector3.right;//0,0,1
@@ -674,72 +654,28 @@ public void ResolveCollisions(){
 	                    normal = Vector3.up;//0,1,0
 	                    if(relative_position.y>0){normal*=-1;}
 	
-	                }else/* if(smallest_axis==penetration_depth.z)*/{
+	                }else{
                         //if this object is above, move it up, else move it down
 	                    normal = Vector3.forward;//0,0,1
 	                    if(relative_position.z>0){normal*=-1;}
 	
 	                }
-                #endregion
-                //restitution is form 0 to 1, where 0 is perfectly inelastic, 1 is perfectly elastic
-                float min_restitition = Mathf.Min(restitution,r);
+                    #endregion
+                    //restitution is form 0 to 1, where 0 is perfectly inelastic, 1 is perfectly elastic
+                    float min_restitition = Mathf.Min(restitution,r);
 
-                float velocity_along_normal=Vector3.Dot(relative_velocity,normal);
-                // print("PENETRATION DEPTH: "+gameObject.name + " , "+other_collider.transform.parent.gameObject.name+" , " + penetration_depth);
+                    float velocity_along_normal=Vector3.Dot(relative_velocity,normal);
+                    // print("PENETRATION DEPTH: "+gameObject.name + " , "+other_collider.transform.parent.gameObject.name+" , " + penetration_depth);
                
-                //if the velocities are already separating, do not resolve. could cause phasing if velocities are separating but actual motion is not
-                if(velocity_along_normal>=0){
-           /*         
-                    #region preliminary position correction
-
-	                 if(smallest_axis<=PhysicsSettings.slop){continue;}
-	                   
-		                if(smallest_axis == penetration_depth.x){
-		                     smallest_axis-=PhysicsSettings.slop;
-	                    smallest_axis*=PhysicsSettings.correctionRatio;
-	
-		                    transform.position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
-		                    other_collider.transform.parent.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
-		
-		                }else if(smallest_axis == penetration_depth.y){
-	                         smallest_axis-=PhysicsSettings.slop;
-	                    smallest_axis*=PhysicsSettings.correctionRatio;
-	
-		                    transform.position += normal* inv_mass*(smallest_axis) / (reciprocal_mass_sum);
-		                    other_collider.transform.parent.position -= normal* im *(smallest_axis) /(reciprocal_mass_sum);
-		
-		                }else if(smallest_axis==penetration_depth.z){ 
-	                        smallest_axis-=PhysicsSettings.slop;
-	                        //only the one on top gets moved
-	                        if(relative_position.z>0){
-	                           
-	                            other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis);
-	
-	                            //entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
-	                            //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyBelow.Add(gameObject);
-	                        }else{
-	                            zpos+= (normal.z)*(smallest_axis);
-	
-	                            //entitiesDirectlyBelow.Add(other_collider.transform.parent.gameObject);
-	                            //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyAbove.Add(gameObject);
-	
-	
-	                        }
-		                    //zpos+= (normal.z)*(smallest_axis) /(mass* reciprocal_mass_sum);
-		                    //other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis)  /(m * reciprocal_mass_sum);
-		
-		                }
-#endregion
-  */
-                   // return;
-                }
+                    //if the velocities are already separating, do not resolve. could cause phasing if velocities are separating but actual motion is not
+               
             
 
-                Vector3 impulse = normal* -(1+min_restitition) * velocity_along_normal / reciprocal_mass_sum;
+                    Vector3 impulse = normal* -(1+min_restitition) * velocity_along_normal / reciprocal_mass_sum;
+                    print(smallest_axis);
+                    #region velocity computation
                 
-                #region velocity computation
-                
-                if(velocity_along_normal<0){
+                    if(velocity_along_normal<0){
 
                   	    if(!other_physics.fixXvel){
 	                          other_physics.xvel-= impulse.x*im;
@@ -764,20 +700,17 @@ public void ResolveCollisions(){
 	                        zvel += impulse.z*inv_mass;
 	                    }  
 
-                }
+                    }
 
 #endregion
 
                 #region positional correction
                 if(smallest_axis<=PhysicsSettings.slop){continue;}
-                   
-	                if(smallest_axis == penetration_depth.x){
-	                    smallest_axis-=PhysicsSettings.slop;
-                        smallest_axis*=PhysicsSettings.correctionRatio;
+                   	    
 
-	                    //transform.position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
-	                    //other_collider.transform.parent.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
-	
+	                if(smallest_axis == penetration_depth.x){
+                        smallest_axis-=PhysicsSettings.slop;
+                        smallest_axis*=PhysicsSettings.correctionRatio;
                         position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
                         other_physics.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
 
@@ -785,40 +718,19 @@ public void ResolveCollisions(){
 	                }else if(smallest_axis == penetration_depth.y){
                         smallest_axis-=PhysicsSettings.slop;
                         smallest_axis*=PhysicsSettings.correctionRatio;
-
-	                    //transform.position += normal* inv_mass*(smallest_axis) / (reciprocal_mass_sum);
-	                    //other_collider.transform.parent.position -= normal* im *(smallest_axis) /(reciprocal_mass_sum);
-
                         position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
                         other_physics.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
 	
-	                }else if(smallest_axis==penetration_depth.z){ 
+	                }else{ 
+        
                         smallest_axis-=PhysicsSettings.slop;
                         smallest_axis*=PhysicsSettings.correctionRatio;
-                       
-
-                        //position += normal* inv_mass*(smallest_axis) /( reciprocal_mass_sum);
-                        //other_physics.position -= im* normal*(smallest_axis)/(reciprocal_mass_sum);
                         if(relative_position.z>0){
                            //only correct the one on top(fully)
-                            other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis);
-
-                            //entitiesDirectlyAbove.Add(other_collider.transform.parent.gameObject);
-                            //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyBelow.Add(gameObject);
-                        }else{
-                           // if(!fixZ){
-                        //         zpos+= (normal.z)*(smallest_axis);
-                         //   }
-                           
-
-                            //entitiesDirectlyBelow.Add(other_collider.transform.parent.gameObject);
-                            //other_collider.transform.parent.GetComponent<Physics>().entitiesDirectlyAbove.Add(gameObject);
-
+                            other_physics.position -= normal*(smallest_axis);
 
                         }
-	                    //zpos+= (normal.z)*(smallest_axis) /(mass* reciprocal_mass_sum);
-	                    //other_collider.transform.parent.GetComponent<Physics>().zpos -= (normal.z)*(smallest_axis)  /(m * reciprocal_mass_sum);
-	
+	                   
 	                }
                     
                 #endregion
@@ -874,7 +786,7 @@ public void ResolveCollisions(){
 	                          other_collider.transform.parent.GetComponent<Physics>().zvel-=friction_impulse.z*im;
 
                               */
-                        #endregion
+                #endregion
 
                   
                   
