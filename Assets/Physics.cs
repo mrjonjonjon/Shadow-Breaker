@@ -596,6 +596,7 @@ public void ResolveCollisions(){
                     //if i'm above it
                     if(zpos>z+h){
                         maxfloor = Mathf.Max(z+h,maxfloor);
+                        continue;
                     }
                     //if im below it
                     if(zpos+height<z ){continue;}
