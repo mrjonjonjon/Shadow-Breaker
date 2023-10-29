@@ -13,7 +13,7 @@ public class PhysicsSettings: ScriptableObject
     public static float correctionRatio=0.3f;//0.5. need higher ratio for big stacks
     public static float slop=0.1f;//0.01
     //this should be roughly double the maximum stack size for stability
-    public static int num_iterations = 1;//6
+    public static int num_iterations = 6;//6
     // public static float contactThreshold=
     // public enum EntityType{Player, Box};
     

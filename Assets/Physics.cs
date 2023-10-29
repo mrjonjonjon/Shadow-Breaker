@@ -354,14 +354,6 @@ void FixedUpdate(){
         if(fixZ){zvel=0f;fixZvel=true;}
 
 
-    
-        if(isTrigger){
-            if(transform.Find("collider")){
-                 //transform.Find("collider").GetComponent<Collider2D>().enabled=false;
-            }
-           
-        }
-
 }
 
 public bool IsGrounded(){
@@ -621,11 +613,11 @@ public void ResolveCollisions(){
                     Vector3 penetration_depth = new Vector3(
                                         relative_position.x>0?//this object is to the left of other object
                                                 Mathf.Abs(position.x+width/2 - (other_physics.position.x-w/2)):
-                                                Mathf.Abs(position.x+w/2 - (other_physics.position.x-width/2)),
+                                                Mathf.Abs(other_physics.position.x+w/2 - (position.x-width/2)),
 
                                         relative_position.y>0?//this object is front of the other object
                                                 Mathf.Abs(position.y+depth/2 - (other_physics.position.y-d/2)):
-                                                Mathf.Abs(position.y+d/2 - (other_physics.position.y-depth/2)),
+                                                Mathf.Abs(other_physics.position.y+d/2 - (position.y-depth/2)),
                                         //relative_position.y>0?Mathf.Abs(_collider2D.transform.position.y+depth - (other_collider.transform.position.y)):Mathf.Abs(other_collider.transform.position.y+d - (_collider2D.transform.position.y)),
 
                                         relative_position.z>0?//this object is under the other object

@@ -14,6 +14,30 @@ public class PhysicsVisuals : MonoBehaviour
                   public bool drawShadows;
                   public float shadowFactor;
                   public Physics _physics;
+                  public static float thickness=0.3f;
+                  public static Color gizmoColor=Color.yellow;
+
+
+
+
+    private void OnDrawGizmos()
+    {
+        BoxCollider2D _box = (BoxCollider2D) GetComponent<Physics>()._collider2D;
+
+        Vector2 boxPosition = _box.transform.position + (Vector3)_box.offset;
+        Vector2 boxSize = _box.size;
+
+        // Draw the main box
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawWireCube(boxPosition, boxSize);
+
+        // Draw offset boxes for "thickness"
+        for (float i = 0; i < thickness; i += 0.05f)
+        {
+            Gizmos.DrawWireCube(boxPosition, boxSize + new Vector2(i, i));
+            Gizmos.DrawWireCube(boxPosition, boxSize - new Vector2(i, i));
+        }
+    }
 
 
 //lateupdate because we want this to run after animator has updated. can force an update manually later
