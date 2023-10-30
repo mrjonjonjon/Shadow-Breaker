@@ -97,6 +97,13 @@ public InputState _currentInputState;
     }
 //note: canmove reserved for locking movement by dialogue systems, gameplay events,etc
 
+public void handleSprintHold(){
+    if(_currentInputState.sprintHold){
+        playerSpeed=2*staticPlayerSpeed;
+    }else{
+        playerSpeed = staticPlayerSpeed;
+    }
+}
 
 public void UpdateDeltaPos(){
    
@@ -142,13 +149,13 @@ public void handleJumping(){
 public void handleMovement(){
             if(isRolling){return;}
 
-if(_currentInputState.inputVector.x>0){
-    _spriteRenderer.flipX=false;
-}else if(_currentInputState.inputVector.x<0){
-    _spriteRenderer.flipX=true;
-}else{
-    //
-}
+            if(_currentInputState.inputVector.x>0){
+                _spriteRenderer.flipX=false;
+            }else if(_currentInputState.inputVector.x<0){
+                _spriteRenderer.flipX=true;
+            }else{
+                //
+            }
       /*      inputX = _currentInputState.inputVector.x;
             if(inputX > 0){
                 inputX=1;
@@ -301,7 +308,7 @@ void handleRoll(){
 void Update(){
         //gets jumppress,hookpress,etc
         _currentInputState = _inputManager.GetInputState();
-
+      handleSprintHold();
       
         SetVelocity();
 
@@ -341,6 +348,8 @@ void Update(){
 
        //dashing funcitonality
       handleDashing();
+
+
 
       handleRoll();
 

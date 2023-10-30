@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputState
 {
-     public InputState(Vector2 iv,bool jp,bool hp,bool ap, bool dp,bool pp,bool rp,bool sm)
+     public InputState(Vector2 iv,bool jp,bool hp,bool ap, bool dp,bool pp,bool rp,bool sm,bool sh)
     {
        inputVector=iv;
        jumpPress=jp;
@@ -14,6 +14,7 @@ public class InputState
        parryPress=pp;
        rollPress=rp;
        superMovePress=sm;
+       sprintHold=sh;
     }
     public Vector2 inputVector;
     public bool jumpPress;
@@ -23,5 +24,6 @@ public class InputState
     public bool parryPress;
     public bool rollPress;
     public bool superMovePress;
+    public bool sprintHold;
 
 }

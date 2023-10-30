@@ -189,9 +189,9 @@ GameObject:
   m_Component:
   - component: {fileID: 846147729}
   - component: {fileID: 846147730}
-  m_Layer: 0
-  m_Name: feet
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: collider
+  m_TagString: PhysicsEntity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102234389}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -1.55, z: 0}
+  m_LocalPosition: {x: 0, y: -21.393978, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656431684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.775}
+  m_LocalPosition: {x: 0, y: 21, z: -21.19699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -810,15 +810,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _contactFilter:
-    useTriggers: 0
-    useLayerMask: 0
+    useTriggers: 1
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 129
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -852,12 +852,12 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0, z: 0}
   deltaPos: {x: 0, y: 0, z: 0}
   zfloor: 0
-  zpos: 0
+  zpos: 21
   staticFriction: 1
   dynamicFriction: 0.5
-  width: 0
-  height: 0
-  depth: 0
+  width: 6.6
+  height: 8.1
+  depth: 8.1
   _collider2D: {fileID: 846147730}
   _srTop: {fileID: 0}
   _srBottom: {fileID: 0}
@@ -896,6 +896,7 @@ MonoBehaviour:
   selfShadow: {fileID: 0}
   drawShadows: 0
   shadowFactor: 0
+  _physics: {fileID: 0}
 --- !u!1001 &5271929794783767920
 PrefabInstance:
   m_ObjectHideFlags: 0

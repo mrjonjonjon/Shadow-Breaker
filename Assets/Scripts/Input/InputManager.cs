@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
          bool dashPress = Input.GetKeyDown(KeyCode.L);
          bool parryPress = Input.GetKeyDown(KeyCode.N);
          bool rollPress = Input.GetKeyDown(KeyCode.M);
+         bool sprintHold = Input.GetKey(KeyCode.O);
 
         bool superMovePress = Input.GetKeyDown(KeyCode.X);
 
@@ -43,7 +44,7 @@ public class InputManager : MonoBehaviour
             }
 
             //return input
-            return new InputState(inputVector,jumpPress,hookPress,attackPress,dashPress,parryPress,rollPress,superMovePress);
+            return new InputState(inputVector,jumpPress,hookPress,attackPress,dashPress,parryPress,rollPress,superMovePress,sprintHold);
            
     }
 }
