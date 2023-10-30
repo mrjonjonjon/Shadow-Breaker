@@ -43,8 +43,13 @@ public bool dashBuffer=false;
 
 
 public Direction lastDirection=Direction.down;
+public Vector2 curDirection{
+    get{return getDirection(lastDirection);}
+    
+}
 public float playerSpeed=1.0f;
 public float staticPlayerSpeed;
+
 
 //deltas for Update. Fixed-Update deltas stored in physics component
 public Vector3 lastPos;
@@ -133,11 +138,14 @@ public void handleJumping(){
         jumping=true;
         //airborne
         if(phys.isGrounded){
+            //position+=curDirection
+           // position+=jumpvel;
             phys.zvel=jumpvel.z;
+            //phys.velocity += (Vector3)(curDirection*jumpvel.x) + Vector3.forward*jumpvel.z;
         }else{
 
-            phys.xvel=jumpvel.x *inputX;
-            phys.yvel=jumpvel.y * inputY;
+            //phys.xvel=jumpvel.x *inputX;
+            //phys.yvel=jumpvel.y * inputY;
             phys.zvel=jumpvel.z;
         }
    
@@ -156,6 +164,8 @@ public void handleMovement(){
             }else{
                 //
             }
+
+           
       /*      inputX = _currentInputState.inputVector.x;
             if(inputX > 0){
                 inputX=1;
@@ -515,7 +525,7 @@ public void SetVelocity(){
     }
 }
 
-#region utility
+#region utility functions
 public void DisableMovement(){
         canMove=false;
 }
