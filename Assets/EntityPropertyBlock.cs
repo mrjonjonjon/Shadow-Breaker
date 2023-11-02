@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+
+//[ExecuteInEditMode]
 
 public class EntityPropertyBlock : MonoBehaviour
 
@@ -20,17 +23,26 @@ public class EntityPropertyBlock : MonoBehaviour
         // Usually it needs to be initialized only once.
         _propertyBlock = new MaterialPropertyBlock(); 
         _propertyBlock2 = new MaterialPropertyBlock(); 
-        SetFloat();
+       // SetFloat();
 
     }
 
-    private void Update()
-    {
-        SetFloat();
-    }
+
+       // #if UNITY_EDITOR
+        void Update()
+        {
+            //if (EditorApplication.isPlayingOrWillChangePlaymode)
+            //    return;
+            //Awake();
+            SetFloat();
+        }
+        //#endif
+      
+    
 
     private void SetFloat()
     {
+        //rend=bottom, rend2=top
         if(MovementController.instance==null){
             return;
         }
@@ -38,32 +50,20 @@ public class EntityPropertyBlock : MonoBehaviour
 
         rend.GetPropertyBlock(_propertyBlock); 
         // Get previously set values. They will reset otherwise
-       // _propertyBlock.SetFloat(colorPropertyName, z);
-
-        //_propertyBlock.SetFloat("_depth",GetComponent<Physics>().depth);
-       // _propertyBlock.SetFloat("_width",GetComponent<Physics>().width);
-        _propertyBlock.SetFloat("_Height",GetComponent<Physics>().height);
+   
         Vector4 playerPos = new Vector4(playerPhysics.transform.position.x,playerPhysics.transform.position.y,playerPhysics.zpos,0f);
         Vector4 pos = new Vector4(transform.position.x,transform.position.y,GetComponent<Physics>().zpos,0f);
-
-       // _propertyBlock.SetVector("_playerPos",playerPos);
-        //_propertyBlock.SetVector("_pos",pos);
+        _propertyBlock.SetFloat("_Height",GetComponent<Physics>().height);
+        _propertyBlock.SetFloat("_Flat",0f);
+         _propertyBlock.SetFloat("_Bottom",transform.Find("sprite/bottom").position.y - GetComponent<Physics>().height/2f);
 
         rend.SetPropertyBlock(_propertyBlock);
 
 
 
         rend2.GetPropertyBlock(_propertyBlock2); // Get previously set values. They will reset otherwise
-       // _propertyBlock.SetFloat(colorPropertyName, z);
 
-        //_propertyBlock2.SetFloat("_depth",GetComponent<Physics>().depth);
-        //_propertyBlock2.SetFloat("_width",GetComponent<Physics>().width);
-        _propertyBlock2.SetFloat("_Height",0f);
-       // Vector4 playerPos = new Vector4(playerPhysics.transform.position.x,playerPhysics.transform.position.y,playerPhysics.zpos,0f);
-       // Vector4 pos = new Vector4(transform.position.x,transform.position.y,GetComponent<Physics>().zpos,0f);
-
-       // _propertyBlock2.SetVector("_playerPos",playerPos);
-       // _propertyBlock2.SetVector("_pos",pos);
+         _propertyBlock2.SetFloat("_Flat",1f);
 
         rend2.SetPropertyBlock(_propertyBlock2);
        

@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 [ExecuteInEditMode]
 //controls the visuals
+//NOTE: ALL SPRITERENDERERS MUST BE SLICED, NOT TILED OR SIMPLE
 public class PhysicsVisuals : MonoBehaviour
 {                 public SpriteRenderer _spriteRenderer;
                   public List<GameObject> allShadows=new List<GameObject>();

@@ -108,6 +108,8 @@ Material:
     - PixelSnap: 0
     - _AlphaClip: 1
     - _Blend: 0
+    - _Bottom: 1.02
+    - _BottomTipY: 0
     - _BumpScale: 1
     - _CastShadows: 1
     - _Cull: 2
@@ -115,6 +117,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnableExternalAlpha: 0
+    - _Flat: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossinessSource: 0
@@ -135,6 +138,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
+    - _TuningConstant: 5
     - _UVSec: 0
     - _WorkflowMode: 1
     - _ZTest: 4

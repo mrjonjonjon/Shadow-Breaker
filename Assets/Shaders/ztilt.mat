@@ -22,13 +22,15 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ztilt
   m_Shader: {fileID: -6465566751694194690, guid: 3574047566d5d4fb084010230db40430, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -56,6 +58,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DstBlend: 0
+    - _Float: 0.96
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -64,7 +67,7 @@ Material:
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
+    - _ZWriteControl: 1
     - _tilt: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
