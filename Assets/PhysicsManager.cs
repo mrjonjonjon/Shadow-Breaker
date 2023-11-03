@@ -14,6 +14,7 @@ public class PhysicsManager : MonoBehaviour
 #region declarations
     public static PhysicsManager instance;
     public List<Physics> allObjects;
+    public List<Stairs> allStairs;
     public static int maxLevels=50;
     public int idCounter=0;
 
@@ -38,6 +39,7 @@ public class PhysicsManager : MonoBehaviour
         }
 
         allObjects=new List<Physics>(FindObjectsOfType<Physics>());
+        allStairs = new List<Stairs>(FindObjectsOfType<Stairs>());
 
         //assign each object an ID
         idCounter=0;
@@ -132,6 +134,9 @@ public class PhysicsManager : MonoBehaviour
         foreach(Physics p in allObjects){
                     if(p.entityType==Physics.EntityType.Prop){continue;}
                    p.SetZFloor();       
+        }
+        foreach(Stairs s in allStairs){
+            s.StairsUpdate();
         }
 
         foreach(Physics p in allObjects){

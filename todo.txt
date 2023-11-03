@@ -7,3 +7,4 @@ fix ui stuff
 fix combat
 stairs
 consider removing z-axis collisions and just set zfloors instead like with tile system.
+spider with procedural anims

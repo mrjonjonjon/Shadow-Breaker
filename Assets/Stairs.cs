@@ -27,7 +27,7 @@ public class Stairs : MonoBehaviour
         Gizmos.color = Color.green; // Set the color for the gizmo line
         Gizmos.DrawLine(startPoint, endPoint);
     }
-    void Update()
+    public void StairsUpdate()
     {
 
 

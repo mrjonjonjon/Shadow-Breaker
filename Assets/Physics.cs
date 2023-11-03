@@ -361,7 +361,7 @@ public bool IsGrounded(){
 }
 
  public void UpdateGrounded(){
-    if(entitiesDirectlyBelow.Count>0 || zpos<=zfloor){
+    if(entitiesDirectlyBelow.Count>0 || zpos<=zfloor+0.1f){
         isGrounded=true;
     }else {
         isGrounded=false;
