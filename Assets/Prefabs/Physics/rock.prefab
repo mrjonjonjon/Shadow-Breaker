@@ -534,6 +534,30 @@ MonoBehaviour:
   drawShadows: 1
   shadowFactor: 0
   _physics: {fileID: 0}
+  brightnessCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.06727188
+      outSlope: 0.06727188
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 14.942398
+      value: 1.0052032
+      inSlope: 0.06727188
+      outSlope: 0.06727188
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!210 &5708350669187309025
 SortingGroup:
   m_ObjectHideFlags: 0

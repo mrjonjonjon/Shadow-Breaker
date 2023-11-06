@@ -17,6 +17,7 @@ public class PhysicsVisuals : MonoBehaviour
                   public Physics _physics;
                   public static float thickness=0.3f;
                   public static Color gizmoColor=Color.yellow;
+                //  public AnimationCurve brightnessCurve;
 
 
 
@@ -98,6 +99,15 @@ void LateUpdate(){
                                 _srTop.transform.position=new Vector3(_srBottom.transform.position.x,
                                                                       _srBottom.bounds.max.y+depth/2,
                                                                       _srBottom.transform.position.z-height);
+                                  //zpos based brightness
+                                  AnimationCurve brightnessCurve = SerializedSingletons.instance.brightnessCurve;
+                                 float brightness = brightnessCurve.Evaluate(zpos+height);
+
+                                  // Set the brightness (you can clamp the values to ensure they're between 0 and 1)
+                                  Color color = _srTop.color;
+                                  
+
+                                  _srTop.color = new Color(brightness,brightness,brightness);
 
 
 
