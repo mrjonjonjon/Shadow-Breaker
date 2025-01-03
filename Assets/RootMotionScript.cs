@@ -10,7 +10,7 @@ public class RootMotionScript : MonoBehaviour {
             public Animator anim;
            // Rigidbody2D rb;
             void Start(){
-                 Application.targetFrameRate = 60;
+                // Application.targetFrameRate = 60;
                 mc=GetComponent<MovementController>();
                 anim=GetComponent<Animator>();
                 //rb=GetComponent<Rigidbody2D>();

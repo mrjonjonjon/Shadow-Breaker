@@ -153,14 +153,14 @@ public void SetZFloor(){
             maxtilefloor=-1000000f;
             foundFloor=false;
            
-                                            Physics2D.BoxCast(
-                                            _collider2D.gameObject.transform.position,
-                                            _collider2D.bounds.size, 
-                                            0f,
-                                            Vector2.zero, 
-                                            _contactFilter,
-                                            results,
-                                            Mathf.Infinity);
+            Physics2D.BoxCast(
+            _collider2D.gameObject.transform.position,
+            _collider2D.bounds.size, 
+            0f,
+            Vector2.zero, 
+            _contactFilter,
+            results,
+            Mathf.Infinity);
 
                         
                                     // num_completed_iters++;
@@ -261,7 +261,7 @@ public void SetZFloor(){
                                 }else{
                                         if(!foundFloor && maxtilefloor<-200){maxtilefloor=0f;}
                 
-                            zfloor = maxtilefloor;
+                            zfloor = Mathf.Max(zfloor,maxtilefloor);
                             //print("GOT HERE");
                             
                             return;
@@ -276,7 +276,7 @@ public void SetZFloor(){
                     transform.position = new Vector3(lastPos.x,lastPos.y,0);
 
                 }else{
-                 zfloor= maxtilefloor;// maxtilefloor;
+                 zfloor= Mathf.Max(zfloor,maxtilefloor);// maxtilefloor;
                 }
                 return;
  
@@ -394,6 +394,8 @@ public void PositionUpdate(){
             //zpos+=zvel*PhysicsSettings.deltatime;
             //zpos=Mathf.Max(zfloor,zpos);
             position+=Vector3.forward*velocity.z*PhysicsSettings.deltatime;
+            zpos=Mathf.Max(zfloor+0.01f,zpos);
+            
 
         }
 
@@ -434,7 +436,9 @@ public void PositionUpdate(){
             GameObject belowWithSpace=null;
             float highestBelow=-100000f;
             float smallestYBelow=10000000f;
-                if(gameObject.name=="Player"){print(num_entites_above_or_below);}
+                if(gameObject.name=="Player"){
+                    //print(num_entites_above_or_below);
+                    }
 
             foreach(RaycastHit2D hit in results){
                 
@@ -502,7 +506,7 @@ public void PositionUpdate(){
                     }
 
                 }else{
-                    zfloor=0f;
+                    zfloor=Mathf.Max(zfloor,0f);
                 }
             
 }
@@ -530,18 +534,17 @@ public void ResolveCollisions(){
         int num_completed_iters=0;
 
         //ground collision
-            if(zpos<zfloor){  
+        if(zpos<zfloor){  
                     //zpos=zfloor;
                     //zvel=0;//-restitution*zvel;   
-                   
-                    if(!fixZ){
-                      zpos=zfloor;  
-                    }
-                    if(!fixZvel){
-                          zvel=0f; 
-                    }
-                 
+            if(!fixZ){
+            zpos=zfloor;  
             }
+            if(!fixZvel){
+                zvel=0f; 
+            }
+                 
+        }
 
         float maxfloor=-1000000f;
 
@@ -591,6 +594,7 @@ public void ResolveCollisions(){
 
                     #endregion
 
+                    //skip triggers. they dont collide
                     if(it)continue;
                 
                     //if i'm above it
@@ -665,7 +669,7 @@ public void ResolveCollisions(){
             
 
                     Vector3 impulse = normal* -(1+min_restitition) * velocity_along_normal / reciprocal_mass_sum;
-                    print(smallest_axis);
+                    //print(smallest_axis);
                     #region velocity computation
                 
                     if(velocity_along_normal<0){
@@ -785,9 +789,13 @@ public void ResolveCollisions(){
                   
             
          }//end of foreach
-         zfloor = Mathf.Max(zfloor,maxfloor);
+        
+         
        }//end of while 
-      
+         zfloor = Mathf.Max(zfloor,maxfloor);
+         zpos = Mathf.Max(zpos,zfloor);
+Debug.Log($"maxfloor {gameObject.name} {maxfloor}");
+        
     }//end of function
 
         

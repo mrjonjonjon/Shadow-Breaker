@@ -94,7 +94,7 @@ public class PhysicsManager : MonoBehaviour
               p.entitiesBelow.Clear();
               p.positionUpdated=false;
               p.collisionsResolved=false;
-              //p.zfloor=0f;
+              p.zfloor=0f;
              
         }
       
@@ -104,14 +104,7 @@ public class PhysicsManager : MonoBehaviour
          // MovementController.instance.handleJumping();
         
          
-        //add gravity and update positions based on velocities
-        foreach(Physics p in allObjects){
-                if(p.entityType==Physics.EntityType.Prop){continue;}
-                p.PositionUpdate();
-               
-                p.positionUpdated=true;
-               
-        }  
+
 
       
            //resolve resulting collisions,setting resultand positions and velocities
@@ -125,6 +118,17 @@ public class PhysicsManager : MonoBehaviour
                 }
            }
 
+
+        //add gravity and update positions based on velocities
+        foreach(Physics p in allObjects){
+                if(p.entityType==Physics.EntityType.Prop){continue;}
+                p.PositionUpdate();
+               
+                p.positionUpdated=true;
+               
+        }  
+
+
         //update above and below
         foreach(Physics p in allObjects){
                 if(p.entityType==Physics.EntityType.Prop){continue;}
@@ -133,7 +137,7 @@ public class PhysicsManager : MonoBehaviour
        
         foreach(Physics p in allObjects){
                     if(p.entityType==Physics.EntityType.Prop){continue;}
-                   p.SetZFloor();       
+                   //p.SetZFloor();       
         }
         foreach(Stairs s in allStairs){
             s.StairsUpdate();
