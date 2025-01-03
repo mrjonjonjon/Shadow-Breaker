@@ -5622,6 +5622,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102234390, guid: 03ac2a115aa064e389e30f4a248735d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8375897187557423496, guid: 03ac2a115aa064e389e30f4a248735d9, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7212,7 +7216,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dce6cf24ec9e14cea9d00b609cad9f66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7251,9 +7255,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 634326144, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326144, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: far clip plane
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326144, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: near clip plane
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326144, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: orthographic size
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 634326145, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -69.2
+      value: -43.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326146, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: m_Dithering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326146, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326146, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 634326146, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: m_RequiresOpaqueTextureOption
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2451605056115945769, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
       propertyPath: m_RootOrder
@@ -7326,6 +7362,10 @@ PrefabInstance:
     - target: {fileID: 7060614520109167320, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406436233326165076, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34c9ac86dde264caba7bacb679083c3f, type: 3}
