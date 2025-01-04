@@ -52,9 +52,9 @@ TagManager:
   - GrapplePoint
   - Rain
   - Mask
-  - StencilVis
-  - 
-  - 
+  - Silhouette
+  - Top
+  - Bottom
   m_SortingLayers:
   - name: Default
     uniqueID: 0
