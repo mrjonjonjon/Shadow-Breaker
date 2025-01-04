@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 634326144}
   - component: {fileID: 634326143}
   - component: {fileID: 634326146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 2
   far clip plane: 90
-  field of view: 60
+  field of view: 65
   orthographic: 1
   orthographic size: 20.2
   m_Depth: -1
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 7224238192683480822}
   - component: {fileID: 7982851796271072952}
   - component: {fileID: 200883836273257121}
-  m_Layer: 9
+  m_Layer: 29
   m_Name: puddlereflection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7658,13 +7658,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5290221234353077433}
   - component: {fileID: 140050568024242209}
+  - component: {fileID: 2105654560}
   m_Layer: 6
   m_Name: Velocity Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5290221234353077433
 Transform:
   m_ObjectHideFlags: 0
@@ -7732,6 +7733,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2105654560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108714812174067647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585273055eeba9149adb806882edfccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customVelocity: {x: 0, y: 0, z: 0}
+  mode: 0
+  rb: {fileID: 0}
+  rb2D: {fileID: 0}
+  maxSpeed: 1
+  remapping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4185544391892315895
 GameObject:
   m_ObjectHideFlags: 0

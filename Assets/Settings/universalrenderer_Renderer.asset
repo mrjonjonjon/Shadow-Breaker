@@ -117,6 +117,35 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-1767146629327026988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8080543c2fbf47859ca48496e2504fed, type: 3}
+  m_Name: VelocityRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    pixelsPerUnit: 62.5
+    renderingLayerMask:
+      mask: -1
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    textureScale: 0.93
+    preview: 1
+  simulation:
+    stiffness: 0
+    damping: 0
+    blurStrength: 1
+    maxDeltaTime: 0.034
+  emitterShader: {fileID: 4800000, guid: e86f705a051c4580a7e5a01073829185, type: 3}
+  blitShader: {fileID: 4800000, guid: f34315e2ae49499e9bad3c7cee74f676, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +170,8 @@ MonoBehaviour:
   - {fileID: -3773243594064814117}
   - {fileID: -1992000257405828399}
   - {fileID: 2563369466697506451}
-  m_RendererFeatureMap: 40c2c93222027800c9198577dd929e7d588536110773be547f907bc919d1ea6f852aa18864b80e1875c4fd9a978e08a3db9fbf54f1bea2cbd1c2d6e851fe5ae4935e96daf2ea9223
+  - {fileID: -1767146629327026988}
+  m_RendererFeatureMap: 40c2c93222027800c9198577dd929e7d588536110773be547f907bc919d1ea6f852aa18864b80e1875c4fd9a978e08a3db9fbf54f1bea2cbd1c2d6e851fe5ae4935e96daf2ea9223d404efdc80d579e7
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -163,7 +193,7 @@ MonoBehaviour:
     m_Bits: 4294966783
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967231
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
