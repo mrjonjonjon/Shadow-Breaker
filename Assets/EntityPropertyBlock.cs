@@ -8,13 +8,13 @@ using UnityEditor;
 public class EntityPropertyBlock : MonoBehaviour
 
 {
-    [SerializeField] private Renderer rend;
+    [SerializeField] public Renderer rend;
 
-    private MaterialPropertyBlock _propertyBlock;
+    public MaterialPropertyBlock _propertyBlock;
 
-      [SerializeField] private Renderer rend2;
+      [SerializeField] public Renderer rend2;
 
-    private MaterialPropertyBlock _propertyBlock2;
+    public MaterialPropertyBlock _propertyBlock2;
 
 
     private void Awake()

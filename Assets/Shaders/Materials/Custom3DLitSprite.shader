@@ -14,8 +14,8 @@ Shader "Custom/SpriteLitShader"
         ZWrite Off
         Stencil
         {
-            Ref 1
-            Comp NotEqual
+            Ref 0
+            Comp Equal
             Pass Keep
             // ZFail decrWrap
         }

@@ -22,13 +22,15 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: shinytop
   m_Shader: {fileID: -6465566751694194690, guid: 7b941e26cd6d547b0b696eb480611c98, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -67,17 +69,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 1
+    - _Blend: 0
     - _Bottom: 1.02
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DstBlend: 0
     - _Flat: 0
     - _Height: 0
     - _Mix: 0.44
     - _ParallaxSpeed: 0.006
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SrcBlend: 1
+    - _Surface: 0
     - _TuningConstant: 5
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _PlayerPos: {r: -15.66, g: -8.9, b: 0, a: 0}
     - _Tiling: {r: 4, g: 4, b: 0, a: 0}
+    - _skyTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

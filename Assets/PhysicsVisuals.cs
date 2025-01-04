@@ -84,8 +84,8 @@ void LateUpdate(){
                                 ((BoxCollider2D)_collider2D).size= new Vector2(width,depth);
                                 
                                 //set top,bottom sprite sizes
-                                _srBottom.size=new Vector2(width,height); 
-                                _srTop.size=new Vector2(width,depth);
+                                _srBottom.transform.localScale=new Vector3(width,height,1f); 
+                                _srTop.transform.localScale=new Vector3(width,depth,1f);
 
                                 //fix collider2d pos to pivot
                                 _collider2D.transform.localPosition=Vector3.zero;
