@@ -51,8 +51,8 @@ TagManager:
   - Lighting Internal (Scene)
   - GrapplePoint
   - Rain
-  - 
-  - 
+  - Mask
+  - StencilVis
   - 
   - 
   m_SortingLayers:

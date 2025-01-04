@@ -8,6 +8,8 @@ using UnityEngine.Rendering;
 //NOTE: ALL SPRITERENDERERS MUST BE SLICED, NOT TILED OR SIMPLE
 public class PhysicsVisuals : MonoBehaviour
 {                 public SpriteRenderer _spriteRenderer;
+
+                  public SpriteRenderer _srTop,_srBottom;
                   public List<GameObject> allShadows=new List<GameObject>();
                   public GameObject shadowPrefab;
                   public SpriteRenderer spriteMask;
@@ -51,8 +53,8 @@ void LateUpdate(){
                         float zpos=GetComponent<Physics>().zpos;
                         SortingGroup sg=GetComponent<Physics>().sg;
                         Physics.EntityType entityType=GetComponent<Physics>().entityType;
-                        SpriteRenderer _srBottom=GetComponent<Physics>()._srBottom;
-                        SpriteRenderer _srTop=GetComponent<Physics>()._srTop;
+                        //SpriteRenderer _srBottom=GetComponent<Physics>()._srBottom;
+                       //SpriteRenderer _srTop=GetComponent<Physics>()._srTop;
                         
                         Collider2D _collider2D=GetComponent<Physics>()._collider2D;
                        // s.pivot.y/s.pixelsPerUnit
@@ -100,14 +102,14 @@ void LateUpdate(){
                                                                       _srBottom.bounds.max.y+depth/2,
                                                                       _srBottom.transform.position.z-height);
                                   //zpos based brightness
-                                  AnimationCurve brightnessCurve = SerializedSingletons.instance.brightnessCurve;
-                                 float brightness = brightnessCurve.Evaluate(zpos+height);
+//                                  AnimationCurve brightnessCurve = SerializedSingletons.instance.brightnessCurve;
+ //                                float brightness = brightnessCurve.Evaluate(zpos+height);
 
                                   // Set the brightness (you can clamp the values to ensure they're between 0 and 1)
                                   Color color = _srTop.color;
                                   
 
-                                  _srTop.color = new Color(brightness,brightness,brightness);
+//                                  _srTop.color = new Color(brightness,brightness,brightness);
 
 
 
